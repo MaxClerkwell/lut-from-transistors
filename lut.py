@@ -24,10 +24,18 @@ Hierarchy (sheet, file, how often it is used):
       buffer     buffer.kicad_sch     1   output buffer
         inverter   inverter.kicad_sch   2 per buffer
 
-Two variants of the switch are provided:
+Three variants are provided:
 
-    tgate   transmission gate, NMOS and PMOS in parallel (full swing)
-    pass    a single NMOS pass transistor (loses one threshold voltage on a 1)
+    tgate   switches are transmission gates, NMOS and PMOS in parallel;
+            the table bits are voltage sources
+    pass    switches are single NMOS pass transistors (a 1 loses one
+            threshold voltage); the table bits are voltage sources
+    sram    transmission gates; the table bits are stored in four SRAM cells
+            of six transistors each, written through a pair of bit lines and
+            one word line per cell
+
+In the variant `sram` the sheet sram_cell.kicad_sch is added, used 4 times,
+with two more inverters each.
 """
 
 from hier import Block, Design, U
@@ -46,7 +54,7 @@ NMOS_PARAMS = ("w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 "
 PMOS_PARAMS = ("w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 "
                "cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
 
-VARIANTS = ("tgate", "pass")
+VARIANTS = ("tgate", "pass", "sram")
 
 
 # Pins of the transistors: 1 = drain, 2 = gate, 3 = source, 4 = bulk
@@ -192,6 +200,53 @@ def buffer_block(inverter):
     return b
 
 
+def sram_cell_block(inverter):
+    """
+    SRAM cell with six transistors: two inverters that hold each other, and
+    two access transistors that connect the cell to the bit lines while the
+    word line WL is high. The output Q is taken directly from the cell.
+    """
+    b = Block("sram_cell", "sram_cell.kicad_sch", title="SRAM cell (6T)")
+    y = 26 * U
+    text = ((-7.62, 5.08), (7.62, 5.08))
+    size = (12 * U, 4 * U)
+
+    qa = nmos(b, (30 * U, 27 * U), "BL", "WL", "Q", rot=90, text=text)
+    b.port("BL", "input", (18 * U, y), 180)
+    b.wire((18 * U, y), b.pin(qa, 1))
+    b.wire(b.pin(qa, 3), (36 * U, y))
+    b.label("Q", (36 * U, y), 0)
+    qb = nmos(b, (74 * U, 27 * U), "QN", "WL", "BLN", rot=90, text=text)
+    b.wire((68 * U, y), b.pin(qb, 1))
+    b.label("QN", (68 * U, y), 180)
+    b.wire(b.pin(qb, 3), (86 * U, y))
+    b.port("BLN", "input", (86 * U, y), 0)
+    for qx in (qa, qb):
+        gx, gy = b.pin(qx, 2)
+        b.wire((gx, gy), (gx, 31 * U))
+        b.label("WL", (gx, 31 * U), 270)
+        b.power("GND", b.pin(qx, 4), 180)
+
+    for name, at, inp, out in (("inv_q", (46 * U, 24 * U), "QN", "Q"),
+                               ("inv_qn", (46 * U, 36 * U), "Q", "QN")):
+        c = b.child(inverter, name, at, size, ["IN"], ["OUT"], {"IN": inp, "OUT": out})
+        b.stub(c, "IN", inp)
+        b.stub(c, "OUT", out)
+
+    b.port("WL", "input", (18 * U, 38 * U), 180)
+    b.wire((18 * U, 38 * U), (24 * U, 38 * U))
+    b.label("WL", (24 * U, 38 * U), 0)
+    b.port("Q", "output", (86 * U, 38 * U), 0)
+    b.wire((86 * U, 38 * U), (80 * U, 38 * U))
+    b.label("Q", (80 * U, 38 * U), 180)
+    b.text("SRAM cell with six transistors.\n"
+           "Two inverters hold each other: Q = not QN, QN = not Q.\n"
+           "While WL = 1 the access transistors connect the cell to the bit lines,\n"
+           "and the bit lines, driven from outside, overwrite the stored value.",
+           (18 * U, 10 * U))
+    return b
+
+
 def source(b, at, kind, net, value, params, flag=False):
     v = b.part("Simulation_SPICE", kind, "V", value, at, {1: net, 2: "GND"},
                fields={"Sim.Params": params}, ref_at=(3.81, -1.27), val_at=(3.81, 1.27))
@@ -216,10 +271,14 @@ def lut2(variant="tgate", table=0b0110):
     0b0110 is XOR. Returns the root block of the hierarchy.
     """
     assert variant in VARIANTS
+    sram = variant == "sram"
+    switch = "pass" if variant == "pass" else "tgate"
     inverter = inverter_block()
-    mux = mux_block(variant, switch_block(variant))
+    mux = mux_block(switch, switch_block(switch))
     buffer = buffer_block(inverter)
-    kind = "transmission gates" if variant == "tgate" else "NMOS pass transistors"
+    kind = "transmission gates" if switch == "tgate" else "NMOS pass transistors"
+    if sram:
+        kind += " and SRAM cells"
     b = Block("lut2", "lut2.kicad_sch", title=f"LUT with two inputs ({kind})")
 
     # sources; the order fixes the references V1 (supply), V2 (A), V3 (B), V4..V7 (table)
@@ -228,13 +287,29 @@ def lut2(variant="tgate", table=0b0110):
            f"y1=0 y2={VDD:g} td=200n tr=1n tf=1n tw=399n per=800n")
     source(b, (18 * U, 38 * U), "VPULSE", "B", "B",
            f"y1=0 y2={VDD:g} td=400n tr=1n tf=1n tw=399n per=800n")
-    for i in range(4):
-        bit = (table >> i) & 1
-        source(b, (8 * U + i * 9 * U, 60 * U), "VDC", f"T{i}", f"{bit * VDD:g}",
-               f"dc={bit * VDD:g}")
+    if sram:
+        # bit lines and word lines; simulate.py replaces the waveforms by the write sequence
+        source(b, (8 * U, 72 * U), "VDC", "BL", "0", "dc=0")
+        source(b, (18 * U, 72 * U), "VDC", "BLN", f"{VDD:g}", f"dc={VDD:g}")
+        for i in range(4):
+            source(b, (32 * U + i * 10 * U, 72 * U), "VDC", f"WL{i}", "0", "dc=0")
+        cell = sram_cell_block(inverter)
+        for i in range(4):
+            c = b.child(cell, f"cell{i}", (9 * U + i * 22 * U, 50 * U), (10 * U, 8 * U),
+                        ["BL", "BLN", "WL"], ["Q"],
+                        {"BL": "BL", "BLN": "BLN", "WL": f"WL{i}", "Q": f"T{i}"})
+            for pin, net in c.connect.items():
+                b.stub(c, pin, net)
+        b.text("Configuration memory: four SRAM cells hold the table bits T0..T3", (5 * U, 46 * U))
+        b.text("Bit lines BL, BLN (data) and word lines WL0..WL3 (address)", (5 * U, 64 * U))
+    else:
+        for i in range(4):
+            bit = (table >> i) & 1
+            source(b, (8 * U + i * 9 * U, 60 * U), "VDC", f"T{i}", f"{bit * VDD:g}",
+                   f"dc={bit * VDD:g}")
+        b.text("Table bits T0..T3 (in an FPGA: SRAM cells)", (5 * U, 51 * U))
     b.text("Supply", (5 * U, 9 * U))
     b.text("Inputs A and B", (5 * U, 29 * U))
-    b.text("Table bits T0..T3 (in an FPGA: SRAM cells)", (5 * U, 51 * U))
 
     # sheets
     inv = (10 * U, 4 * U)
@@ -266,8 +341,9 @@ def lut2(variant="tgate", table=0b0110):
     b.power("GND", (x, y + U), 0)
     b.text("Load", (108 * U, 33 * U))
 
+    note = "table written through the bit lines" if sram else f"table T3 T2 T1 T0 = {table:04b}"
     b.text(f"Look-up table with two inputs, built from {kind}\n"
-           f"Y = T[2 B + A], table T3 T2 T1 T0 = {table:04b}", (5 * U, 4 * U))
+           f"Y = T[2 B + A], {note}", (5 * U, 4 * U))
     return b
 
 

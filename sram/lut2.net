@@ -1,0 +1,2595 @@
+(export 
+  (version "D")
+  (design
+    (source "generate.py")
+    (date "09/29/2026 03:49 PM")
+    (tool "SKiDL (2.3.0)")
+    (sheet
+      (number 1)
+      (name "/")
+      (tstamps "/")
+      (title_block
+        (title)
+        (company)
+        (rev)
+        (date)
+        (source "generate.py")
+        (comment
+          (number "1")
+          (value ""))
+        (comment
+          (number "2")
+          (value ""))
+        (comment
+          (number "3")
+          (value ""))
+        (comment
+          (number "4")
+          (value ""))
+        (comment
+          (number "5")
+          (value ""))
+        (comment
+          (number "6")
+          (value ""))
+        (comment
+          (number "7")
+          (value ""))
+        (comment
+          (number "8")
+          (value ""))
+        (comment
+          (number "9")
+          (value "")))))
+  (components
+    (comp
+      (ref "CL1")
+      (value "10p")
+      (description "Unpolarized capacitor")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Description") "Unpolarized capacitor")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet"))
+        (field
+          (name "SKiDL Tag") "WWY03HbVBg")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Device")
+        (part "C"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "08bfafe3-b27c-5364-a495-09482827f1fa"))
+    (comp
+      (ref "Q1")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "x75NVdsrK9")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b7e8fb9e-76d4-5a48-897e-7f25e7aa0a66"))
+    (comp
+      (ref "Q10")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "HOuiCPSZhn")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b16e464a-a290-5d98-86f3-8ff530a476f2"))
+    (comp
+      (ref "Q11")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "QT4dWycBPm")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "29d542d5-53d1-5b43-bd0c-36c8b35bda7d"))
+    (comp
+      (ref "Q12")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "BGGpRRy3Ma")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "d85c7c5c-cf87-5928-9537-b64cd83f73bb"))
+    (comp
+      (ref "Q13")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "i8h2OzrgLq")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "0649c332-adb9-5672-9eb5-0341ab518031"))
+    (comp
+      (ref "Q14")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "SJSgrARxXA")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "1112604f-3190-55ad-ad66-e219eb04c1b4"))
+    (comp
+      (ref "Q15")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "8lxxc5dQrS")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b7a622e7-ab83-5447-928d-155f8181ccac"))
+    (comp
+      (ref "Q16")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "SJWurTnbpI")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "46871fcf-efb6-5ef0-a4f6-082d255224ca"))
+    (comp
+      (ref "Q17")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "0ME_FESt70")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "46e710aa-fff3-5bcc-aca1-1064a4664861"))
+    (comp
+      (ref "Q18")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "GfaIrkOGR4")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "d21b4349-e7f6-5eba-a738-3779e4240b02"))
+    (comp
+      (ref "Q19")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "kItdKruxbk")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b5e49435-8154-571b-90f9-1700b4e132c0"))
+    (comp
+      (ref "Q2")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "tr9PGP6ACJ")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "e66f7430-0e1c-52c3-a141-9a72367bc49d"))
+    (comp
+      (ref "Q20")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "GpDv1N5uWd")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "6c476b91-5e89-50cd-94d5-1203e5b08057"))
+    (comp
+      (ref "Q21")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "jGvSJpgj0n")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "010be005-d6b6-5e31-a762-ffc5812c742c"))
+    (comp
+      (ref "Q22")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "qyBDQvCQ7i")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "7095968c-bc6d-5799-805c-d4a9c4e26a28"))
+    (comp
+      (ref "Q23")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "6SlEflEgeG")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "c4e11d9c-56e0-5001-8369-ff8544acb747"))
+    (comp
+      (ref "Q24")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "5UPJWXyk6R")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "31d03836-e00a-5599-856c-925eb193391c"))
+    (comp
+      (ref "Q25")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "SPEiFWFfWM")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "5a9cadd3-950d-54e0-96c5-ab296c69e6a0"))
+    (comp
+      (ref "Q26")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "Fb72I34jYk")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "2956afba-3f72-51b6-8c89-78d105ae685d"))
+    (comp
+      (ref "Q27")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "io8p6KhPW1")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b43664d6-b30f-5173-a911-83eb7a6cdf7a"))
+    (comp
+      (ref "Q28")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "Ae0Oa4TF9G")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "410be7f2-6db3-5178-8db1-bc4e37769ad0"))
+    (comp
+      (ref "Q29")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "4IKi21QhEA")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "85fbc955-3a34-52a0-95a0-fa3030841256"))
+    (comp
+      (ref "Q3")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "bTx6UOcluP")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "f61b6ee7-3cac-5490-9456-6b24e72b2948"))
+    (comp
+      (ref "Q30")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "wYfun8kdGo")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "7638b40b-ddad-5dba-ac72-7602e7c116a6"))
+    (comp
+      (ref "Q31")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "5wPRLQmZOG")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b561e8e4-a894-577e-bb16-a99ae1cf0360"))
+    (comp
+      (ref "Q32")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "ZO0zSPFbpp")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "bc8d66a0-0597-5b89-9c5b-6dda08b2b1a1"))
+    (comp
+      (ref "Q33")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "tR4YmZJGaN")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "779679d7-823f-5e7d-ac7b-10b279f5e99e"))
+    (comp
+      (ref "Q34")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "cpv3MeZDpT")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "0b6e2652-13ae-59ce-8d95-5c4c2569d318"))
+    (comp
+      (ref "Q35")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "NizW1cNtr4")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b201fb9b-57a4-59f5-9dff-b20dae231a4d"))
+    (comp
+      (ref "Q36")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "Zf2KxGB39e")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "81265cce-6c81-5ff4-bfd5-834eece9259e"))
+    (comp
+      (ref "Q37")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "_tHZZSMdj3")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "cad0ad56-0e0d-526c-971e-624a76241ca7"))
+    (comp
+      (ref "Q38")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "NNJXMjI6dW")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "ac1c21c8-6a6d-5b9b-b9e5-5e98601a739d"))
+    (comp
+      (ref "Q39")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "QAz4b6Msza")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "07ff6cd8-15b7-55e6-b2a5-38ce28ff373d"))
+    (comp
+      (ref "Q4")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "6yhAg_jJmE")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "afe7e38f-7417-5b84-83af-5e6724288c35"))
+    (comp
+      (ref "Q40")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "sArNLkOwDS")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b351a7da-4c37-5b2e-acae-e29187db1866"))
+    (comp
+      (ref "Q41")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "6BOp243tmv")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "cf07d774-14c7-575c-bf7d-f73aa0751c39"))
+    (comp
+      (ref "Q42")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "j174yAPs_8")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "e6b5caa9-3071-531d-8aac-27bf85cbda4e"))
+    (comp
+      (ref "Q43")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "bFniXeXJcX")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "64e4458d-3fc2-59f1-9c0b-cc35d3d2f0f5"))
+    (comp
+      (ref "Q44")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "VL_K4z7e5e")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "91bb2139-c73d-5513-9c09-6593bdb7c14e"))
+    (comp
+      (ref "Q5")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "Jao7DG8vte")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "a3fe6e98-9e48-53d5-81ae-eee70902ea80"))
+    (comp
+      (ref "Q6")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "8ugNn6b0sP")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "d0c58c7f-67b4-54d3-bbdf-2c9c23e934bc"))
+    (comp
+      (ref "Q7")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "bmd1rmxRUu")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "e1ad69a5-a81e-5a1b-9e84-1c31c77775d3"))
+    (comp
+      (ref "Q8")
+      (value "NMOS")
+      (description "N-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "NMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "N-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "2foCHgH4yj")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "NMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "a41ac0a6-1628-5086-960c-a2ba94d22a87"))
+    (comp
+      (ref "Q9")
+      (value "PMOS")
+      (description "P-channel MOSFET symbol with substrate (bulk) pin")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Device") "PMOS")
+        (field
+          (name "Sim.Type") "MOS1")
+        (field
+          (name "Sim.Pins") "1=D 2=G 3=S 4=B")
+        (field
+          (name "Sim.Params") "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p")
+        (field
+          (name "Description") "P-channel MOSFET symbol with substrate (bulk) pin")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
+        (field
+          (name "SKiDL Tag") "RTcCUkVf6b")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "PMOS_Substrate"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "5a58db4a-4ac9-55f9-b701-15c7d83281eb"))
+    (comp
+      (ref "V1")
+      (value "5")
+      (description "Voltage source, DC")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "dc=5")
+        (field
+          (name "Description") "Voltage source, DC")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "4nvGAiCin3")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VDC"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "342c95fb-d43a-5f23-82a8-6eced338bba5"))
+    (comp
+      (ref "V2")
+      (value "A")
+      (description "Voltage source, pulse")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "y1=0 y2=5 td=200n tr=1n tf=1n tw=399n per=800n")
+        (field
+          (name "Description") "Voltage source, pulse")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "L1wXFQvHlE")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VPULSE"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "bbf19145-04fe-5a7f-86f1-ce662802b0e7"))
+    (comp
+      (ref "V3")
+      (value "B")
+      (description "Voltage source, pulse")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "y1=0 y2=5 td=400n tr=1n tf=1n tw=399n per=800n")
+        (field
+          (name "Description") "Voltage source, pulse")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "ax0ZrFp7eL")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VPULSE"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "9cef0525-334b-5416-acca-59a17836456c"))
+    (comp
+      (ref "V4")
+      (value "0")
+      (description "Voltage source, DC")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "dc=0")
+        (field
+          (name "Description") "Voltage source, DC")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "djdDnEFpFw")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VDC"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "03b29eab-c4db-52d2-9e1d-5428071dcce4"))
+    (comp
+      (ref "V5")
+      (value "5")
+      (description "Voltage source, DC")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "dc=5")
+        (field
+          (name "Description") "Voltage source, DC")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "jp7CUmvwBC")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VDC"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "f59ea5e8-8cba-5559-b29b-72dd8a24d872"))
+    (comp
+      (ref "V6")
+      (value "0")
+      (description "Voltage source, DC")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "dc=0")
+        (field
+          (name "Description") "Voltage source, DC")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "svOQy8_0Yg")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VDC"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "5f564b5e-e8be-5912-8f51-93be3ce04ae4"))
+    (comp
+      (ref "V7")
+      (value "0")
+      (description "Voltage source, DC")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "dc=0")
+        (field
+          (name "Description") "Voltage source, DC")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "ymA4e0c3Vp")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VDC"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "e2a2fe07-146e-5f8d-a80c-0fd18e8059b3"))
+    (comp
+      (ref "V8")
+      (value "0")
+      (description "Voltage source, DC")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "dc=0")
+        (field
+          (name "Description") "Voltage source, DC")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "c6oXZD8Xyt")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VDC"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "a4371cee-9a6c-5adf-94fb-8ed96d60388d"))
+    (comp
+      (ref "V9")
+      (value "0")
+      (description "Voltage source, DC")
+      (footprint "simulation:none")
+      (fields
+        (field
+          (name "Sim.Params") "dc=0")
+        (field
+          (name "Description") "Voltage source, DC")
+        (field
+          (name "Footprint") "simulation:none")
+        (field
+          (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
+        (field
+          (name "SKiDL Tag") "0exTuZRT_k")
+        (field
+          (name "SKiDL Line") "hier.py:156"))
+      (libsource
+        (lib "Simulation_SPICE")
+        (part "VDC"))
+      (sheetpath
+        (names "/")
+        (tstamps "/"))
+      (component_classes)
+      (tstamps "b3682a16-c108-5e3f-9f9c-eae75a387bad")))
+  (nets
+    (net
+      (code 1)
+      (name "+5V")
+      (class "Default")
+      (node
+        (ref "Q11")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q11")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q15")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q15")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q17")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q17")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q21")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q21")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q23")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q23")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q25")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q25")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q27")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q27")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q3")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q3")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q30")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q32")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q34")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q36")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q38")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q40")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q41")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q41")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q43")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q43")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q5")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q5")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q9")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q9")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "V1")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 2)
+      (name "A")
+      (class "Default")
+      (node
+        (ref "Q25")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q26")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q30")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q31")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q34")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q35")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "V2")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 3)
+      (name "AN")
+      (class "Default")
+      (node
+        (ref "Q25")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q26")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q29")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q32")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q33")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q36")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 4)
+      (name "B")
+      (class "Default")
+      (node
+        (ref "Q27")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q28")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q38")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q39")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "V3")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 5)
+      (name "BL")
+      (class "Default")
+      (node
+        (ref "Q1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q13")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q19")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q7")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V4")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 6)
+      (name "BLN")
+      (class "Default")
+      (node
+        (ref "Q14")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q2")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q20")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q8")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V5")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 7)
+      (name "BN")
+      (class "Default")
+      (node
+        (ref "Q27")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q28")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q37")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q40")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 8)
+      (name "GND")
+      (class "Default")
+      (node
+        (ref "CL1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q1")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q10")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q10")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q12")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q12")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q13")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q14")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q16")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q16")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q18")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q18")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q19")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q2")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q20")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q22")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q22")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q24")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q24")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q26")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q26")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q28")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q28")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q29")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q31")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q33")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q35")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q37")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q39")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q4")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q4")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q42")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q42")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q44")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q44")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q6")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q6")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q7")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "Q8")
+        (pin "4")
+        (pintype "INPUT"))
+      (node
+        (ref "V1")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V2")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V3")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V4")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V5")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V6")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V7")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V8")
+        (pin "2")
+        (pintype "PASSIVE"))
+      (node
+        (ref "V9")
+        (pin "2")
+        (pintype "PASSIVE")))
+    (net
+      (code 9)
+      (name "N0")
+      (class "Default")
+      (node
+        (ref "Q29")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q30")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q31")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q32")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q37")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q38")
+        (pin "3")
+        (pintype "PASSIVE")))
+    (net
+      (code 10)
+      (name "N1")
+      (class "Default")
+      (node
+        (ref "Q33")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q34")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q35")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q36")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q39")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q40")
+        (pin "3")
+        (pintype "PASSIVE")))
+    (net
+      (code 11)
+      (name "T0")
+      (class "Default")
+      (node
+        (ref "Q1")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q29")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q3")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q30")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q4")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q5")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q6")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 12)
+      (name "T1")
+      (class "Default")
+      (node
+        (ref "Q10")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q11")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q12")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q31")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q32")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q7")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q9")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 13)
+      (name "T2")
+      (class "Default")
+      (node
+        (ref "Q13")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q15")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q16")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q17")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q18")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q33")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q34")
+        (pin "3")
+        (pintype "PASSIVE")))
+    (net
+      (code 14)
+      (name "T3")
+      (class "Default")
+      (node
+        (ref "Q19")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q21")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q22")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q23")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q24")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q35")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q36")
+        (pin "3")
+        (pintype "PASSIVE")))
+    (net
+      (code 15)
+      (name "WL0")
+      (class "Default")
+      (node
+        (ref "Q1")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q2")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "V6")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 16)
+      (name "WL1")
+      (class "Default")
+      (node
+        (ref "Q7")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q8")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "V7")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 17)
+      (name "WL2")
+      (class "Default")
+      (node
+        (ref "Q13")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q14")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "V8")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 18)
+      (name "WL3")
+      (class "Default")
+      (node
+        (ref "Q19")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q20")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "V9")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 19)
+      (name "Y")
+      (class "Default")
+      (node
+        (ref "CL1")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q43")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q44")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 20)
+      (name "YI")
+      (class "Default")
+      (node
+        (ref "Q37")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q38")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q39")
+        (pin "3")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q40")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q41")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q42")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 21)
+      (name "buffer/MID")
+      (class "Default")
+      (node
+        (ref "Q41")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q42")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q43")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q44")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 22)
+      (name "cell0/QN")
+      (class "Default")
+      (node
+        (ref "Q2")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q3")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q4")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q5")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q6")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 23)
+      (name "cell1/QN")
+      (class "Default")
+      (node
+        (ref "Q10")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q11")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q12")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q8")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q9")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 24)
+      (name "cell2/QN")
+      (class "Default")
+      (node
+        (ref "Q14")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q15")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q16")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q17")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q18")
+        (pin "1")
+        (pintype "PASSIVE")))
+    (net
+      (code 25)
+      (name "cell3/QN")
+      (class "Default")
+      (node
+        (ref "Q20")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q21")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q22")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q23")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q24")
+        (pin "1")
+        (pintype "PASSIVE")))))

@@ -1,0 +1,1539 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "9406b915-b1e8-489a-99f0-f66b4cac849d")
+	(paper "A4")
+	(title_block
+		(title "Analog switch: transmission gate")
+		(comment 1 "Generated from the description in lut.py")
+	)
+	(lib_symbols
+		(symbol "Simulation_SPICE:NMOS_Substrate"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 6.985 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "NMOS_Substrate"
+				(at 6.985 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 29.845 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+				(at 0 -19.05 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "N-channel MOSFET symbol with substrate (bulk) pin"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "NMOS"
+				(at 0 -16.51 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Type" "MOS1"
+				(at 0 -14.605 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=D 2=G 3=S 4=B"
+				(at 0 -12.7 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mosfet nmos simulation"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "NMOS_Substrate_0_1"
+				(polyline
+					(pts
+						(xy 1.524 1.905)
+						(xy 1.524 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 2.286)
+						(xy 2.032 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 1.778)
+						(xy 2.54 1.778)
+						(xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 0.508)
+						(xy 2.032 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 -1.27)
+						(xy 2.032 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0)
+						(xy 3.302 0.381)
+						(xy 3.302 -0.381)
+						(xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54)
+						(xy 2.54 -1.778)
+						(xy 2.032 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.921 0)
+					(radius 3.0294)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54)
+						(xy 5.08 0)
+						(xy 2.032 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "NMOS_Substrate_1_1"
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 -5.08 90)
+					(length 2.54)
+					(name "Bulk"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Simulation_SPICE:PMOS_Substrate"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "Q"
+				(at 6.35 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "PMOS_Substrate"
+				(at 6.35 -1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 40.64 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+				(at 0 -17.78 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "P-channel MOSFET symbol with substrate (bulk) pin"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Device" "PMOS"
+				(at 0 -13.97 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Type" "MOS1"
+				(at 0 -15.875 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Sim.Pins" "1=D 2=G 3=S 4=B"
+				(at 0 -12.065 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "mosfet pmos simulation"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "PMOS_Substrate_0_1"
+				(polyline
+					(pts
+						(xy 1.524 1.905)
+						(xy 1.524 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 0)
+						(xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 2.286)
+						(xy 2.032 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 1.778)
+						(xy 2.54 1.778)
+						(xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 0.508)
+						(xy 2.032 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.032 -1.27)
+						(xy 2.032 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54)
+						(xy 2.54 -1.778)
+						(xy 2.032 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.921 0)
+					(radius 3.0294)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0)
+						(xy 2.794 0.381)
+						(xy 2.794 -0.381)
+						(xy 3.81 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 -2.54)
+						(xy 5.08 0)
+						(xy 2.032 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PMOS_Substrate_1_1"
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 5.08 -5.08 90)
+					(length 2.54)
+					(name "Bulk"
+						(effects
+							(font
+								(size 0.508 0.508)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:GND"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -6.35 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "GND"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "GND_0_1"
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 -1.27)
+						(xy 1.27 -1.27)
+						(xy 0 -2.54)
+						(xy -1.27 -1.27)
+						(xy 0 -1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "GND_1_1"
+				(pin power_in line
+					(at 0 0 270)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "power:+5V"
+			(power global)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "+5V"
+				(at 0 3.556 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+5V\""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "+5V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54)
+						(xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0)
+						(xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+5V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:NMOS_Substrate")
+		(at 142.24 111.76 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "59f02d7e-ea83-4ff5-ab01-c366bcd3a412")
+		(property "Reference" "Q29"
+			(at 134.62 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "NMOS"
+			(at 149.86 116.84 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 111.76 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 111.76 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 142.24 111.76 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" "MOS1"
+			(at 142.24 111.76 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S 4=B"
+			(at 142.24 111.76 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Params" "w=10u l=10u vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p"
+			(at 142.24 111.76 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "593dc416-c383-4aa6-b869-ff157a21c008")
+		)
+		(pin "2"
+			(uuid "aad32d6f-ec54-4ba2-8dbc-dee3d04a853d")
+		)
+		(pin "3"
+			(uuid "3fda7c67-c67d-46df-8930-f30c15e56992")
+		)
+		(pin "4"
+			(uuid "f94c2eca-0393-4048-ac70-9e1d11fc6a36")
+		)
+		(instances
+			(project "lut2"
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "Q29")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "Q31")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "Q33")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "Q35")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "Q37")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "Q39")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:PMOS_Substrate")
+		(at 142.24 91.44 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "30772f7e-c79b-40b3-8547-fd624825707f")
+		(property "Reference" "Q30"
+			(at 134.62 86.36 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PMOS"
+			(at 149.86 86.36 270)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 142.24 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 142.24 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 142.24 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Type" "MOS1"
+			(at 142.24 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S 4=B"
+			(at 142.24 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Sim.Params" "w=10u l=10u vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cgso=10n cgdo=10n cbd=0.5p cbs=0.5p"
+			(at 142.24 91.44 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b64374c5-cc4d-4608-a9fa-ad7fdc9e85ce")
+		)
+		(pin "2"
+			(uuid "c1df2c89-3d66-4dad-96e1-c32083ae9465")
+		)
+		(pin "3"
+			(uuid "8b752249-6c44-436e-88a8-5e2ff57afc28")
+		)
+		(pin "4"
+			(uuid "2c2d24a5-ced7-403e-b3eb-600dd15e6c75")
+		)
+		(instances
+			(project "lut2"
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "Q30")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "Q32")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "Q34")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "Q36")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "Q38")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "Q40")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 147.32 106.68 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0933b4f2-b4eb-4780-97f0-3cee74e40df5")
+		(property "Reference" "#PWR040"
+			(at 151.13 105.41 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GND"
+			(at 151.13 107.95 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 147.32 106.68 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 147.32 106.68 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "ba821c2f-ca6f-49e4-ab2f-aa661f02547b")
+		)
+		(instances
+			(project "lut2"
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "#PWR040")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "#PWR042")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "#PWR044")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "#PWR046")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "#PWR048")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "#PWR050")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 137.16 96.52 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9ca5fde1-b0e5-4874-9eec-a1650b60a14c")
+		(property "Reference" "#PWR041"
+			(at 140.97 95.25 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "+5V"
+			(at 140.97 97.79 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 137.16 96.52 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 137.16 96.52 0)
+			(hide yes)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b7eedbe4-69c6-447e-af57-46f9e5f62106")
+		)
+		(instances
+			(project "lut2"
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "#PWR041")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/be2493df-67b6-4067-bdd9-74b045b3b7fd/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "#PWR043")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "#PWR045")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/ceeff747-d336-435d-9533-87b2ca3935d4/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "#PWR047")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/4317a1a6-db44-4f83-a303-8cef12df27ed"
+					(reference "#PWR049")
+					(unit 1)
+				)
+				(path "/0f13ad48-a41c-4b43-9c35-4adc18ddb4e2/622a68a7-b56b-4a6d-9c98-b24de8acf97d/40af038d-aef6-41b2-8072-5f81212f776f"
+					(reference "#PWR051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 137.16 109.22)
+			(xy 134.62 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2d70f65e-111c-4754-865c-2c3cc2540279")
+	)
+	(wire
+		(pts
+			(xy 134.62 109.22)
+			(xy 134.62 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4629e05d-48b0-488e-96e4-5f4a710f7321")
+	)
+	(wire
+		(pts
+			(xy 147.32 109.22)
+			(xy 149.86 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f1028451-cb35-4abe-904b-2aa9dc916aa7")
+	)
+	(wire
+		(pts
+			(xy 149.86 109.22)
+			(xy 149.86 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63dadd89-1fd5-4b63-8be9-55a61ec7927a")
+	)
+	(wire
+		(pts
+			(xy 142.24 115.57)
+			(xy 142.24 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "170f8b3f-ad2f-47fc-b59d-5350fefd5bf1")
+	)
+	(wire
+		(pts
+			(xy 142.24 121.92)
+			(xy 111.76 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2b3ac9cc-415a-4fe0-ab7f-5e59d20b4836")
+	)
+	(wire
+		(pts
+			(xy 137.16 93.98)
+			(xy 134.62 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "679c43cb-fd69-408a-a50d-2f9176ad2e28")
+	)
+	(wire
+		(pts
+			(xy 134.62 93.98)
+			(xy 134.62 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "83dab1da-27e8-4ff4-9a83-df757b93d9ce")
+	)
+	(wire
+		(pts
+			(xy 147.32 93.98)
+			(xy 149.86 93.98)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f8fac112-c3e8-4744-a2c8-39a5614c0e13")
+	)
+	(wire
+		(pts
+			(xy 149.86 93.98)
+			(xy 149.86 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "238219b0-5973-47ba-9935-f60561b9215f")
+	)
+	(wire
+		(pts
+			(xy 142.24 87.63)
+			(xy 142.24 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "52e47ae2-424e-496b-8ece-271ce748bfda")
+	)
+	(wire
+		(pts
+			(xy 142.24 81.28)
+			(xy 111.76 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4e841f8-4cd5-4ad3-9462-bffe2a5c002a")
+	)
+	(wire
+		(pts
+			(xy 111.76 101.6)
+			(xy 134.62 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a7fecbe0-ba54-40e4-8f77-d775b9b1f5e0")
+	)
+	(wire
+		(pts
+			(xy 149.86 101.6)
+			(xy 172.72 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4a1a8042-5ebd-4e73-b432-4a4ab6a9d5f5")
+	)
+	(junction
+		(at 134.62 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e392218a-2a8f-4fa6-993e-6d4b74330146")
+	)
+	(junction
+		(at 149.86 101.6)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2304b318-3466-4e22-95f2-b6aa08fef4d2")
+	)
+	(hierarchical_label "ON"
+		(shape input)
+		(at 111.76 121.92 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "68d1cc7a-b498-4f8c-98ad-79271fa7244f")
+	)
+	(hierarchical_label "ON_N"
+		(shape input)
+		(at 111.76 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "4ccc69e0-ba9a-4a8a-bdbc-120060373d0a")
+	)
+	(hierarchical_label "IN"
+		(shape passive)
+		(at 111.76 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "46093ae7-c076-4f9e-994d-59b9a5511b43")
+	)
+	(hierarchical_label "OUT"
+		(shape passive)
+		(at 172.72 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "60662b2d-7596-493a-b763-a6a336b94c18")
+	)
+	(text "Transmission gate: IN and OUT are connected when ON = 1 and ON_N = 0.\nThe NMOS passes a 0 well, the PMOS passes a 1 well; together they pass both."
+		(exclude_from_sim no)
+		(at 111.76 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4a622894-6718-42d3-a4dd-26181ebe6e5f")
+	)
+	(embedded_fonts no)
+)

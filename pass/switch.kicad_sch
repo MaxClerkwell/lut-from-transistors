@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "4008b9ca-fdc7-40ac-a712-da395f72b0f8")
+	(uuid "e939de0f-2a95-4a1b-aa29-5e8a139685ea")
 	(paper "A4")
 	(title_block
 		(title "Analog switch: NMOS pass transistor")
@@ -460,7 +460,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "fb1a321d-bb7b-48a0-b4c5-e2a7401d4f4b")
+		(uuid "eae10be4-1657-4649-84a7-8ae5046e649c")
 		(property "Reference" "Q5"
 			(at 134.62 116.84 90)
 			(effects
@@ -532,40 +532,40 @@
 			)
 		)
 		(pin "1"
-			(uuid "0b1f95fe-aedf-4ede-ae12-310c0858fbfb")
+			(uuid "c67e5d3a-4779-454c-9f3f-0f9a5b09f718")
 		)
 		(pin "2"
-			(uuid "60f4c529-19d3-4f35-b74c-3a3d3009b543")
+			(uuid "39a6a49d-7a64-4b53-a9b4-e2ad17e8add5")
 		)
 		(pin "3"
-			(uuid "8d6c0b70-6a34-4574-b45a-7d0281fd0460")
+			(uuid "81112258-3b5c-41db-bad2-9e8bb5b3d956")
 		)
 		(pin "4"
-			(uuid "79616d36-ee12-4e8a-b022-80e5e6d69580")
+			(uuid "7c5427fd-6d21-48c4-a194-1dfca94adb56")
 		)
 		(instances
 			(project "lut2"
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/9f625b7a-b382-442d-a875-89aeea17bdf8/286cbe21-590c-4327-af4d-4290ecaa02fa"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/860ec7c7-14f5-4e7a-bbe8-e0eb58b49519/bab0d500-0758-4c06-847c-3e9bb4ba4b7a"
 					(reference "Q5")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/9f625b7a-b382-442d-a875-89aeea17bdf8/203dd9ab-9c76-49e1-a78a-749f99dc3b5e"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/860ec7c7-14f5-4e7a-bbe8-e0eb58b49519/e3116938-2221-40bf-a9e2-f4ee0735e2e1"
 					(reference "Q6")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/c5c6330b-c0f7-49ad-bddb-edde6499b7f0/286cbe21-590c-4327-af4d-4290ecaa02fa"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/a021f876-55cc-4950-a810-71138ade7ef4/bab0d500-0758-4c06-847c-3e9bb4ba4b7a"
 					(reference "Q7")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/c5c6330b-c0f7-49ad-bddb-edde6499b7f0/203dd9ab-9c76-49e1-a78a-749f99dc3b5e"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/a021f876-55cc-4950-a810-71138ade7ef4/e3116938-2221-40bf-a9e2-f4ee0735e2e1"
 					(reference "Q8")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/2664245e-8f3f-412e-b5c6-3d6f2020b5eb/286cbe21-590c-4327-af4d-4290ecaa02fa"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/2105eb02-a847-4291-b7cd-5d4a7e4aff9c/bab0d500-0758-4c06-847c-3e9bb4ba4b7a"
 					(reference "Q9")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/2664245e-8f3f-412e-b5c6-3d6f2020b5eb/203dd9ab-9c76-49e1-a78a-749f99dc3b5e"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/2105eb02-a847-4291-b7cd-5d4a7e4aff9c/e3116938-2221-40bf-a9e2-f4ee0735e2e1"
 					(reference "Q10")
 					(unit 1)
 				)
@@ -580,7 +580,7 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e76dde96-9eab-4cdf-b8a1-eaf55dc9af8d")
+		(uuid "6f7b6641-63d6-4913-a3d3-41b1ff65384b")
 		(property "Reference" "#PWR014"
 			(at 151.13 105.41 0)
 			(hide yes)
@@ -620,31 +620,31 @@
 			)
 		)
 		(pin "1"
-			(uuid "89713539-36f9-457d-80ae-9041c751b83b")
+			(uuid "5a5bbfd1-4b1c-48c9-83ec-5d219e38f878")
 		)
 		(instances
 			(project "lut2"
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/9f625b7a-b382-442d-a875-89aeea17bdf8/286cbe21-590c-4327-af4d-4290ecaa02fa"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/860ec7c7-14f5-4e7a-bbe8-e0eb58b49519/bab0d500-0758-4c06-847c-3e9bb4ba4b7a"
 					(reference "#PWR014")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/9f625b7a-b382-442d-a875-89aeea17bdf8/203dd9ab-9c76-49e1-a78a-749f99dc3b5e"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/860ec7c7-14f5-4e7a-bbe8-e0eb58b49519/e3116938-2221-40bf-a9e2-f4ee0735e2e1"
 					(reference "#PWR015")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/c5c6330b-c0f7-49ad-bddb-edde6499b7f0/286cbe21-590c-4327-af4d-4290ecaa02fa"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/a021f876-55cc-4950-a810-71138ade7ef4/bab0d500-0758-4c06-847c-3e9bb4ba4b7a"
 					(reference "#PWR016")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/c5c6330b-c0f7-49ad-bddb-edde6499b7f0/203dd9ab-9c76-49e1-a78a-749f99dc3b5e"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/a021f876-55cc-4950-a810-71138ade7ef4/e3116938-2221-40bf-a9e2-f4ee0735e2e1"
 					(reference "#PWR017")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/2664245e-8f3f-412e-b5c6-3d6f2020b5eb/286cbe21-590c-4327-af4d-4290ecaa02fa"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/2105eb02-a847-4291-b7cd-5d4a7e4aff9c/bab0d500-0758-4c06-847c-3e9bb4ba4b7a"
 					(reference "#PWR018")
 					(unit 1)
 				)
-				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/2664245e-8f3f-412e-b5c6-3d6f2020b5eb/203dd9ab-9c76-49e1-a78a-749f99dc3b5e"
+				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/2105eb02-a847-4291-b7cd-5d4a7e4aff9c/e3116938-2221-40bf-a9e2-f4ee0735e2e1"
 					(reference "#PWR019")
 					(unit 1)
 				)
@@ -660,7 +660,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "f9b97a27-01da-48ac-8c96-e75cc301fb15")
+		(uuid "f0a4d184-9a7b-41cd-83ef-7b33be9ca15c")
 	)
 	(wire
 		(pts
@@ -671,7 +671,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "fbf31c7f-4d85-4717-a6c9-b786f5896595")
+		(uuid "42572c82-79a7-4d4f-a397-9d3e5a872cb1")
 	)
 	(wire
 		(pts
@@ -682,7 +682,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "9e732698-e3be-45e6-801c-c9ddc6747b1f")
+		(uuid "84879f8e-7765-4121-9729-9e5b1353268b")
 	)
 	(wire
 		(pts
@@ -693,7 +693,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "88fcab50-7ca2-469c-9f3f-3b3c1ca3d206")
+		(uuid "9613f9f9-2302-4241-b3d5-f3148ae4a9ce")
 	)
 	(wire
 		(pts
@@ -704,7 +704,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "198b7366-a2c0-4668-9dfa-62708751f734")
+		(uuid "b2d74625-b2c9-407c-b4d3-90384de3b3a0")
 	)
 	(wire
 		(pts
@@ -715,7 +715,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "6e46c02e-abc8-40e3-bcf6-d3aa6f3c5c71")
+		(uuid "20ef839e-9f70-4d52-956d-cf8c7709eab6")
 	)
 	(wire
 		(pts
@@ -726,7 +726,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "77ceb843-5a59-46e2-bddc-21c32cd71fd8")
+		(uuid "54ba491d-9013-45dd-b540-bf4cffc3c1c0")
 	)
 	(wire
 		(pts
@@ -737,7 +737,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "65ae4f65-36bc-4422-98ef-c50e1bbf6745")
+		(uuid "fd0dd3ee-f688-44c7-bdf0-f392f9ca6615")
 	)
 	(hierarchical_label "ON"
 		(shape input)
@@ -748,7 +748,7 @@
 			)
 			(justify right)
 		)
-		(uuid "a3c865df-3c1e-4f1f-be60-4c6edacb0728")
+		(uuid "21e8d08d-a454-418b-872a-28003bff2bb5")
 	)
 	(hierarchical_label "IN"
 		(shape passive)
@@ -759,7 +759,7 @@
 			)
 			(justify right)
 		)
-		(uuid "af6b80cb-d1c9-45a1-bc16-c1eadd360c76")
+		(uuid "db3cbf26-d1fc-4935-baf0-9ad6271b4af8")
 	)
 	(hierarchical_label "OUT"
 		(shape passive)
@@ -770,7 +770,7 @@
 			)
 			(justify left)
 		)
-		(uuid "2412bed6-a179-4d31-be03-55834c5d23d3")
+		(uuid "25e8457f-655c-4b0d-829d-55e3e97d7e2a")
 	)
 	(text "Pass transistor: IN and OUT are connected when ON = 1.\nA 1 arrives one threshold voltage below the gate voltage."
 		(exclude_from_sim no)
@@ -781,7 +781,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "963b8c03-b47d-4735-8d09-26cdd6b983f9")
+		(uuid "e153990d-7f05-42d5-9951-b25c11ec4846")
 	)
 	(embedded_fonts no)
 )
