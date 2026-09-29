@@ -1,0 +1,50 @@
+LUT with two inputs, tgate
+.model __Q3 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q2 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q4 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q5 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q7 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q8 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q6 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q10 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q9 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q11 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q12 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q20 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q19 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q14 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q13 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q15 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q16 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q18 NMOS vto=1 kp=1m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q17 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+.model __Q1 PMOS vto=-1 kp=0.5m gamma=0.4 phi=0.65 lambda=0.02 cbd=0.5p cbs=0.5p cgso=10n cgdo=10n
+MQ3 bn b vdd vdd __Q3 l=10u w=10u
+MQ2 an a 0 0 __Q2 l=10u w=10u
+VA1 a 0 PULSE(0 5 2e-07 1e-09 1e-09 3.99e-07 8e-07)
+VB1 b 0 PULSE(0 5 4e-07 1e-09 1e-09 3.99e-07 8e-07)
+VT3 t3 0 PWL(0 0 6.5e-06 0 6.501e-06 5 1.28e-05 5)
+VT2 t2 0 PWL(0 0 3.3e-06 0 3.301e-06 5 6.5e-06 5 6.501e-06 0 9.7e-06 0 9.701e-06 5 1.28e-05 5)
+VT1 t1 0 PWL(0 0 1.7e-06 0 1.701e-06 5 3.3e-06 5 3.301e-06 0 4.9e-06 0 4.901e-06 5 6.5e-06 5 6.501e-06 0 8.1e-06 0 8.101e-06 5 9.7e-06 5 9.701e-06 0 1.13e-05 0 1.1301e-05 5 1.28e-05 5)
+VT0 t0 0 PWL(0 0 9e-07 0 9.01e-07 5 1.7e-06 5 1.701e-06 0 2.5e-06 0 2.501e-06 5 3.3e-06 5 3.301e-06 0 4.1e-06 0 4.101e-06 5 4.9e-06 5 4.901e-06 0 5.7e-06 0 5.701e-06 5 6.5e-06 5 6.501e-06 0 7.3e-06 0 7.301e-06 5 8.1e-06 5 8.101e-06 0 8.9e-06 0 8.901e-06 5 9.7e-06 5 9.701e-06 0 1.05e-05 0 1.0501e-05 5 1.13e-05 5 1.1301e-05 0 1.21e-05 0 1.2101e-05 5 1.28e-05 5)
+MQ4 bn b 0 0 __Q4 l=10u w=10u
+MQ5 t0 an n0 0 __Q5 l=10u w=10u
+MQ7 t1 a n0 0 __Q7 l=10u w=10u
+MQ8 n0 an t1 vdd __Q8 l=10u w=10u
+MQ6 n0 a t0 vdd __Q6 l=10u w=10u
+MQ10 n1 a t2 vdd __Q10 l=10u w=10u
+MQ9 t2 an n1 0 __Q9 l=10u w=10u
+MQ11 t3 a n1 0 __Q11 l=10u w=10u
+MQ12 n1 an t3 vdd __Q12 l=10u w=10u
+MQ20 y yb 0 0 __Q20 l=10u w=10u
+MQ19 y yb vdd vdd __Q19 l=10u w=10u
+CL1 y 0 10p
+MQ14 yi b n0 vdd __Q14 l=10u w=10u
+MQ13 n0 bn yi 0 __Q13 l=10u w=10u
+MQ15 n1 b yi 0 __Q15 l=10u w=10u
+MQ16 yi bn n1 vdd __Q16 l=10u w=10u
+MQ18 yb yi 0 0 __Q18 l=10u w=10u
+MQ17 yb yi vdd vdd __Q17 l=10u w=10u
+MQ1 an a vdd vdd __Q1 l=10u w=10u
+V1 vdd 0 DC 5
+.end

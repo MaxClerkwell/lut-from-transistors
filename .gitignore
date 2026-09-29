@@ -1,0 +1,10 @@
+__pycache__/
+.venv/
+build/
+*.lck
+*.kicad_prl
+fp-info-cache
+.history/
+*.erc
+*.log
+results/*.csv

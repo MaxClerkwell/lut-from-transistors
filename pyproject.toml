@@ -1,0 +1,13 @@
+[project]
+name = "transistor-lut"
+version = "0.1.0"
+description = "A look-up table built from transistors: SKiDL circuit, KiCad schematic, ngspice simulation and VCD output for GTKWave"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy",
+    "matplotlib",
+    "skidl>=2.3",
+]
+
+[tool.uv]
+package = false
