@@ -2,7 +2,7 @@
   (version "D")
   (design
     (source "generate.py")
-    (date "09/29/2026 03:59 PM")
+    (date "09/29/2026 04:10 PM")
     (tool "SKiDL (2.3.0)")
     (sheet
       (number 1)
@@ -55,7 +55,7 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "K0JPIwaUki")
+          (name "SKiDL Tag") "9niXa9rPPd")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -65,7 +65,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "90f54706-5516-5829-9bcf-f602314cb470"))
+      (tstamps "215de414-e2c7-538e-8816-7c2dd8e2e7ce"))
     (comp
       (ref "Q1")
       (value "PMOS")
@@ -87,7 +87,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "zK9I4P61yU")
+          (name "SKiDL Tag") "Mxc_ZfXryz")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -97,7 +97,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "d55816ea-e0a4-53a9-a539-4fb83b71e246"))
+      (tstamps "681f67e3-5807-5428-a283-4a0243589e1b"))
     (comp
       (ref "Q10")
       (value "NMOS")
@@ -119,7 +119,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "Eb_NRtQVj5")
+          (name "SKiDL Tag") "GbFkznTuvu")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -129,7 +129,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "4e532fc5-9a10-5e1e-8678-ba0419ebbd25"))
+      (tstamps "0bd77f5a-9811-55ba-82e3-0f3ce6bbda71"))
     (comp
       (ref "Q11")
       (value "PMOS")
@@ -151,7 +151,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "OdDRr5VHYe")
+          (name "SKiDL Tag") "7ZCO32hUaj")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -161,7 +161,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "de92d39b-f792-5384-9985-553a4116e6c1"))
+      (tstamps "3370f46b-0985-547f-859e-2013695d9516"))
     (comp
       (ref "Q12")
       (value "NMOS")
@@ -183,7 +183,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "U6sZ8NxfCU")
+          (name "SKiDL Tag") "ZE8m_Tf5Dm")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -193,7 +193,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "1e8f0719-1818-5494-a54c-a22c7e2f7bf8"))
+      (tstamps "6a1574da-0ce6-5a9a-b147-b25938bbfdf9"))
     (comp
       (ref "Q13")
       (value "PMOS")
@@ -215,7 +215,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "CizQgEvZ9Z")
+          (name "SKiDL Tag") "_pweA5_JbX")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -225,7 +225,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "bd9660e4-0959-5e3b-9b3a-59853fb174a2"))
+      (tstamps "7a5c4f79-4460-57fa-9e47-114ed41be621"))
     (comp
       (ref "Q14")
       (value "NMOS")
@@ -247,7 +247,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "dy6b2pt2Lw")
+          (name "SKiDL Tag") "nE8KT7NiGr")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -257,7 +257,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "1782cb8b-7cf7-5e93-ada4-d3a31612687b"))
+      (tstamps "3602d4d5-910e-5553-9ac8-da1f3a1f87f7"))
     (comp
       (ref "Q2")
       (value "NMOS")
@@ -279,7 +279,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "YcGIZLmbZM")
+          (name "SKiDL Tag") "hlezmhJ9pI")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -289,7 +289,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "70b530cc-94b9-5661-b9ee-df2b68e7bc81"))
+      (tstamps "50841fb7-2558-5c7c-823d-3754ab418a95"))
     (comp
       (ref "Q3")
       (value "PMOS")
@@ -311,7 +311,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "pz0hLxZ1qt")
+          (name "SKiDL Tag") "bW3epkgzJG")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -321,7 +321,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "c3c95a4c-3831-58d9-b372-67c501b7c19f"))
+      (tstamps "2fb0bf4c-5827-5157-9d74-2862de764e95"))
     (comp
       (ref "Q4")
       (value "NMOS")
@@ -343,7 +343,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "35qL60uM0N")
+          (name "SKiDL Tag") "OGutBKJ8iq")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -353,7 +353,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "2fb10ec5-18dc-590e-b828-f0e03fc3066a"))
+      (tstamps "95158467-bc4d-561f-8c05-eebcbb1519e8"))
     (comp
       (ref "Q5")
       (value "NMOS")
@@ -375,7 +375,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "4N084TjQUM")
+          (name "SKiDL Tag") "E_ZgzBXsmC")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -385,7 +385,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "f6ebb5b0-36af-5c33-aa76-8e81d74442ae"))
+      (tstamps "f7bbbe31-ad71-5f31-90ed-0c20a8d89390"))
     (comp
       (ref "Q6")
       (value "NMOS")
@@ -407,7 +407,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "lvZvXwwM3w")
+          (name "SKiDL Tag") "GJ4aFAFdWp")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -417,7 +417,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "e3446a73-89c3-551d-b63c-143a9a11f286"))
+      (tstamps "75b057ad-9633-54ec-b06c-1c280fe129bc"))
     (comp
       (ref "Q7")
       (value "NMOS")
@@ -439,7 +439,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "bFu4W2acYD")
+          (name "SKiDL Tag") "Us1KzdteIn")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -449,7 +449,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "9b9df54e-98ea-59de-9c74-8794bb9870ea"))
+      (tstamps "c7a2d3b9-80a2-599a-9145-a6d60aac00f0"))
     (comp
       (ref "Q8")
       (value "NMOS")
@@ -471,7 +471,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "h9ugE9FXRm")
+          (name "SKiDL Tag") "qxFD9IiFMz")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -481,7 +481,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "3a21bc25-afbc-51e6-889f-8640eef0b123"))
+      (tstamps "bfb3f339-301d-58c3-ace3-8da3cd9c4a70"))
     (comp
       (ref "Q9")
       (value "NMOS")
@@ -503,7 +503,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "cqKRPLYZzU")
+          (name "SKiDL Tag") "zWx1klJuF6")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -513,7 +513,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "66d6013c-c23f-552d-8516-8785f846adec"))
+      (tstamps "2ab46625-bb2e-5407-afc4-2cf9a1ec55ea"))
     (comp
       (ref "V1")
       (value "5")
@@ -529,7 +529,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "TUptnOyzCD")
+          (name "SKiDL Tag") "CGYo4ANebR")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -539,7 +539,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "09265669-3a56-59f5-96f1-a3792eaa4a03"))
+      (tstamps "4d8ab34c-94cc-5e31-87b4-81c3f45ef7eb"))
     (comp
       (ref "V2")
       (value "A")
@@ -555,7 +555,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "3iWiGq6WWo")
+          (name "SKiDL Tag") "PIU8CINBlw")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -565,7 +565,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "8403ebe8-0f36-54ae-a647-ceb2b2e9c7f5"))
+      (tstamps "40262be5-2ef5-556f-8cf7-18a36006a604"))
     (comp
       (ref "V3")
       (value "B")
@@ -581,7 +581,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "UX9eWuiSMX")
+          (name "SKiDL Tag") "xRoQLQTzw_")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -591,7 +591,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "9065e4dc-0a40-59ee-8096-e38ab6bfbcd4"))
+      (tstamps "9d29cc1e-db88-578b-9681-82bc10bb82e7"))
     (comp
       (ref "V4")
       (value "0")
@@ -607,7 +607,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "75kR1n2CsH")
+          (name "SKiDL Tag") "_p2XJdBp6O")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -617,7 +617,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "59f80902-32d0-5606-baea-79e342d19e2c"))
+      (tstamps "a8fccdd0-4007-5e9a-a9cd-b1b8d59b8ce0"))
     (comp
       (ref "V5")
       (value "5")
@@ -633,7 +633,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "sgPxreAfYp")
+          (name "SKiDL Tag") "wsJTOLThjc")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -643,7 +643,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "196bddee-4a65-5e27-a187-488d462f8a6d"))
+      (tstamps "4f7a1d05-3eda-5fe1-b5e2-2dbe505678c5"))
     (comp
       (ref "V6")
       (value "5")
@@ -659,7 +659,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "4WSQP3yEuE")
+          (name "SKiDL Tag") "lL8fk4r8uv")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -669,7 +669,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "f4903160-3b4f-5f5f-8163-bebd91696f9e"))
+      (tstamps "8982d8c3-3a18-573b-977c-669561cda078"))
     (comp
       (ref "V7")
       (value "0")
@@ -685,7 +685,7 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "cBWVP_U7M1")
+          (name "SKiDL Tag") "1yIIvMFQO_")
         (field
           (name "SKiDL Line") "hier.py:162"))
       (libsource
@@ -695,7 +695,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "55a950c8-318d-510c-90b5-5801a56b003b")))
+      (tstamps "5435df4c-e9f8-56f5-8d40-d591f3917ce2")))
   (nets
     (net
       (code 1)

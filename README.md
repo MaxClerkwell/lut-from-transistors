@@ -117,16 +117,6 @@ half the supply would flip the cell and change the function of the LUT.
 This is why the memory cells of real FPGAs are either buffered or built
 from transistors that are strong compared with the load they see.
 
-## The same circuit in atopile
-
-The directory [`atopile/`](atopile/) contains the LUT a second time,
-described in [atopile](https://atopile.io). The two descriptions were
-written independently and are compared part by part: all three variants are
-identical in transistors and connectivity, and the simulation from the
-atopile netlist gives the same results. See
-[`atopile/README.md`](atopile/README.md), also for what atopile does not
-provide: it produces neither a schematic nor a SPICE netlist.
-
 ## Results
 
 All three variants compute all 16 functions correctly: 64 of 64 table
@@ -235,8 +225,6 @@ simulated.
 | `generate.py` | writes netlists and schematics, verifies the schematic against the SKiDL circuit |
 | `simulate.py` | simulation, analysis, VCD and GTKWave files, plots |
 | `vcd.py` | VCD writer |
-| `atopile/` | the same circuit in atopile, with the board files of its build |
-| `ato_netlist.py`, `verify_atopile.py` | read the atopile build and compare it with the design in `lut.py` |
 | `kicad_sch.py`, `ngspice.py` | schematic writer and ngspice wrapper, from [naive-diff-amp-comperator](https://github.com/MaxClerkwell/naive-diff-amp-comperator) |
 | `tgate/`, `pass/`, `sram/` | generated KiCad projects: root sheet `lut2.kicad_sch`, four sub-sheets, netlist `lut2.net` |
 | `docs/` | renderings: one SVG per sheet, one PDF per variant |
@@ -247,8 +235,6 @@ simulated.
 ```sh
 uv run generate.py      # SKiDL -> netlists, schematics, consistency check, docs/
 uv run simulate.py      # schematics -> ngspice -> results/
-uv run verify_atopile.py                # atopile build against lut.py
-uv run simulate.py --source atopile     # simulate the atopile netlist -> results/atopile/
 ```
 
 `generate.py` ends with `schematic <-> SKiDL netlist: IDENTICAL` for all

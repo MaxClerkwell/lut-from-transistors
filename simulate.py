@@ -11,12 +11,7 @@ FPGA, while the inputs step through all four combinations in Gray code
 (index 0, 1, 3, 2), so that only one input changes at a time. A second,
 short run changes both inputs at the same instant and looks for glitches.
 
-Usage: uv run simulate.py [--source kicad|atopile] [--results DIR]
-
-With `--source atopile` the transistors and their nets are taken from the
-board files of the atopile build (atopile/layouts/) instead of the KiCad
-schematic; sources and load are added as a test bench. Results then go to
-results/atopile/.
+Usage: uv run simulate.py [--results DIR]
 
 In the variant `sram` the table bits are not sources but SRAM cells. Each
 rewrite of the table is a sequence of four write cycles: the bit lines are
@@ -43,8 +38,7 @@ from pathlib import Path
 
 import numpy as np
 
-import ato_netlist
-from lut import C_LOAD, NMOS_PARAMS, PMOS_PARAMS, VARIANTS, VDD
+from lut import VARIANTS, VDD
 from ngspice import NgSpice
 from vcd import VCD
 
@@ -99,33 +93,6 @@ class Netlist:
                 tok[1:1 + n] = [self.net(t) for t in tok[1:1 + n]]
                 l = " ".join(tok)
             self.lines.append(l)
-
-    @classmethod
-    def from_atopile(cls, variant):
-        """
-        Netlist from the atopile build: the transistors with their nets, plus
-        a test bench of sources and load. atopile describes the circuit that
-        would go onto a board; the sources are not part of it.
-        """
-        nl = object.__new__(cls)
-        nl.lines = []
-        for kind, polarity, params in (("NMOS4", "NMOS", NMOS_PARAMS),
-                                       ("PMOS4", "PMOS", PMOS_PARAMS)):
-            model = " ".join(p for p in params.split() if p[:2] not in ("w=", "l="))
-            nl.lines.append(f".model {kind} {polarity} {model}")
-        size = " ".join(p for p in NMOS_PARAMS.split() if p[:2] in ("w=", "l="))
-        for p in ato_netlist.load(variant):
-            nets = " ".join(cls.net({"hv": "+5V", "lv": "GND"}.get(p.pads[k], p.pads[k]))
-                            for k in ("1", "2", "3", "4"))
-            nl.lines.append(f"M{p.ref} {nets} {p.kind} {size}")
-        bench = ["V1 vdd 0 DC %g" % VDD, "VA1 a 0 DC 0", "VB1 b 0 DC 0"]
-        if variant == "sram":
-            bench += ["VBL1 bl 0 DC 0", "VBLN1 bln 0 DC %g" % VDD]
-            bench += [f"VWL{k} wl{k} 0 DC 0" for k in range(4)]
-        else:
-            bench += [f"VT{k} t{k} 0 DC 0" for k in range(4)]
-        nl.lines += bench + [f"CL1 y 0 {C_LOAD}"]
-        return nl
 
     @staticmethod
     def net(name):
@@ -441,11 +408,8 @@ def run(ng, nl, name, t_end, sram=False):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--source", choices=("kicad", "atopile"), default="kicad")
-    ap.add_argument("--results", type=Path, default=None)
+    ap.add_argument("--results", type=Path, default=HERE / "results")
     args = ap.parse_args()
-    if args.results is None:
-        args.results = HERE / "results" / ("atopile" if args.source == "atopile" else "")
     args.results.mkdir(parents=True, exist_ok=True)
     ng = NgSpice()
     results, glitch = {}, {}
@@ -453,10 +417,7 @@ def main():
     for variant in VARIANTS:
         name = f"lut2_{variant}"
         sram = variant == "sram"
-        if args.source == "atopile":
-            nl = Netlist.from_atopile(variant)
-        else:
-            nl = Netlist(HERE / variant / "lut2.kicad_sch")
+        nl = Netlist(HERE / variant / "lut2.kicad_sch")
         stimulus(nl, sram)
         (args.results / f"{name}.cir").write_text(nl.render(f"LUT with two inputs, {variant}"))
         t, v, i_supply = run(ng, nl, name, T_END, sram)
@@ -482,10 +443,7 @@ def main():
     names = {"tgate": "Transmission gates", "pass": "Pass transistors", "sram": "SRAM cells"}
     head = " | ".join(names[x] for x in VARIANTS)
     sep = "|".join("---" for _ in range(len(VARIANTS) + 1))
-    origin = {"kicad": "the KiCad schematics generated from lut.py",
-              "atopile": "the board files of the atopile build"}[args.source]
     out = ["# LUT with two inputs: simulation results", "",
-           f"Netlist taken from {origin}.", "",
            "One transient run per variant covers all 16 functions. The inputs step through",
            "the four combinations in Gray code (index 0, 1, 3, 2) in steps of 200 ns. The",
            "table is rewritten every 800 ns, while the inputs are 00: in the variants",
