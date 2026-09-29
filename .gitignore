@@ -9,3 +9,10 @@ fp-info-cache
 *.log
 results/*.csv
 *_sklib.py
+# atopile: build products and the isolated home directory of build.sh
+atopile/build/
+atopile/.home/
+atopile/.ato/
+# results of the simulation from the atopile netlist: only the summary is kept
+results/atopile/*
+!results/atopile/summary.md

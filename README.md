@@ -1,7 +1,8 @@
 # A look-up table built from transistors
 
 A LUT with two inputs, the logic element of an FPGA, built from 20 MOS
-transistors. The circuit is described in Python with
+transistors, or from 44 if the table is stored in SRAM cells. The circuit
+is described in Python with
 [SKiDL](https://devbisme.github.io/skidl/), drawn as a KiCad schematic,
 simulated with ngspice, and the result is written as a VCD file that opens
 in [GTKWave](https://gtkwave.sourceforge.net/).
@@ -33,15 +34,16 @@ index is `2 B + A`. A buffer of two inverters restores the level and drives
 the load. The four table bits T0 to T3 are voltage sources here; in an FPGA
 they are SRAM cells written by the bitstream.
 
-## Two variants
+## Three variants
 
-The switches of the multiplexers can be built in two ways, and the
-repository contains both.
+The switches of the multiplexers can be built in two ways, and the table
+bits can be ideal sources or real memory cells.
 
-| Variant | Switch | Transistors | Schematic |
-|---|---|---|---|
-| `tgate` | transmission gate, NMOS and PMOS in parallel | 20 | `tgate/lut2.kicad_sch` |
-| `pass` | a single NMOS pass transistor | 14 | `pass/lut2.kicad_sch` |
+| Variant | Switch | Table bits | Transistors | Schematic |
+|---|---|---|---|---|
+| `tgate` | transmission gate, NMOS and PMOS in parallel | voltage sources | 20 | `tgate/lut2.kicad_sch` |
+| `pass` | a single NMOS pass transistor | voltage sources | 14 | `pass/lut2.kicad_sch` |
+| `sram` | transmission gate | four SRAM cells | 44 | `sram/lut2.kicad_sch` |
 
 ## A hierarchical schematic
 
@@ -55,8 +57,9 @@ sheet of its own, and used as often as needed.
 | `mux2` | `mux2.kicad_sch` | two switches | 3 |
 | `switch` | `switch.kicad_sch` | one or two transistors | 6 |
 | `buffer` | `buffer.kicad_sch` | two inverters | 1 |
+| `sram_cell` | `sram_cell.kicad_sch` | two inverters, two access transistors | 4, variant `sram` only |
 
-Five files describe 15 sheets. The hierarchy is three levels deep: the
+Five files describe 15 sheets; in the variant `sram` six files describe 27. The hierarchy is three levels deep: the
 transistors of a switch sit in `lut2 / mux_n0 / sw0`.
 
 ![Root sheet](docs/tgate/lut2.svg)
@@ -75,9 +78,60 @@ in `mux_n0 / sw0` and Q15 and Q16 in `mux_y / sw1`. `hier.py` takes care
 of this: it walks the hierarchy, creates the flat SKiDL circuit and writes
 every sheet with the references of all its uses.
 
+## The table in SRAM cells
+
+In an FPGA the table bits are not sources. They are memory cells, written
+once when the bitstream is loaded. The variant `sram` replaces each source
+by a cell of six transistors.
+
+![SRAM cell](docs/sram/lut2-cell0.svg)
+
+Two inverters hold each other: the output of each is the input of the
+other, so the pair has two stable states. Two access transistors connect
+the cell to a pair of bit lines while the word line is high. To write, the
+bit lines are driven to the value and its complement, and the word line is
+pulsed; the bit lines overpower the inverters and the cell flips. The
+output of the cell is taken directly from the storage node.
+
+All four cells share the bit lines BL and BLN and have a word line of their
+own, WL0 to WL3. The bit lines carry the data, the word lines are the
+address. Writing a table takes four write cycles, and in the simulation
+every change of function is such a sequence, 22 ns per cell.
+
+![Simulation of the SRAM variant](results/lut2_sram.png)
+
+The top panel shows the write sequence during the first 100 ns and,
+afterwards, something an ideal source would hide. When the multiplexer
+switches at 200 ns, it connects the cell that stores T1 = 1 to the node N0,
+which is still at 0 V. The charge of that node has to come from the cell,
+and the storage node is pulled down to 3.3 V before the cell restores it.
+
+| Quantity | Value |
+|---|---|
+| Cells disturbed, out of 64 | 0 |
+| Lowest level of a node that stores a 1 | 3.31 V |
+| Highest level of a node that stores a 0 | 1.01 V |
+
+No cell loses its content, but the margin is finite: a node pushed across
+half the supply would flip the cell and change the function of the LUT.
+This is why the memory cells of real FPGAs are either buffered or built
+from transistors that are strong compared with the load they see.
+
+## The same circuit in atopile
+
+The directory [`atopile/`](atopile/) contains the LUT a second time,
+described in [atopile](https://atopile.io). The two descriptions were
+written independently and are compared part by part: all three variants are
+identical in transistors and connectivity, and the simulation from the
+atopile netlist gives the same results. See
+[`atopile/README.md`](atopile/README.md), also for what atopile does not
+provide: it produces neither a schematic nor a SPICE netlist.
+
 ## Results
 
-Both variants compute all 16 functions correctly: 64 of 64 table entries.
+All three variants compute all 16 functions correctly: 64 of 64 table
+entries each. The table below lists the two variants with ideal table
+bits; the numbers of the variant `sram` are in `results/summary.md`.
 All numbers below are written by `simulate.py` to `results/summary.md`.
 
 | Quantity | Transmission gates | Pass transistors |
@@ -181,8 +235,10 @@ simulated.
 | `generate.py` | writes netlists and schematics, verifies the schematic against the SKiDL circuit |
 | `simulate.py` | simulation, analysis, VCD and GTKWave files, plots |
 | `vcd.py` | VCD writer |
+| `atopile/` | the same circuit in atopile, with the board files of its build |
+| `ato_netlist.py`, `verify_atopile.py` | read the atopile build and compare it with the design in `lut.py` |
 | `kicad_sch.py`, `ngspice.py` | schematic writer and ngspice wrapper, from [naive-diff-amp-comperator](https://github.com/MaxClerkwell/naive-diff-amp-comperator) |
-| `tgate/`, `pass/` | generated KiCad projects: root sheet `lut2.kicad_sch`, four sub-sheets, netlist `lut2.net` |
+| `tgate/`, `pass/`, `sram/` | generated KiCad projects: root sheet `lut2.kicad_sch`, four sub-sheets, netlist `lut2.net` |
 | `docs/` | renderings: one SVG per sheet, one PDF per variant |
 | `results/` | VCD and GTKWave files, plots, netlists, `summary.md` |
 
@@ -191,11 +247,13 @@ simulated.
 ```sh
 uv run generate.py      # SKiDL -> netlists, schematics, consistency check, docs/
 uv run simulate.py      # schematics -> ngspice -> results/
+uv run verify_atopile.py                # atopile build against lut.py
+uv run simulate.py --source atopile     # simulate the atopile netlist -> results/atopile/
 ```
 
-`generate.py` ends with `schematic <-> SKiDL netlist: IDENTICAL` for both
+`generate.py` ends with `schematic <-> SKiDL netlist: IDENTICAL` for all
 variants. It overwrites the schematics, including manual changes. KiCad's
-electrical rules check reports no violations for either variant.
+electrical rules check reports no violations for any variant.
 
 Open a schematic with `eeschema tgate/lut2.kicad_sch`. A double click on a
 sheet symbol enters the sheet.
@@ -211,8 +269,10 @@ KiCad 9 or 10 with `kicad-cli` and the symbol libraries in
   capacitance 0.5 pF. They describe neither a particular discrete part nor
   an FPGA process. The delays are properties of these models. A LUT in a
   modern FPGA switches in tens of picoseconds.
-- **The table bits are ideal sources.** A real SRAM cell has a finite
-  output resistance and has to be written.
+- **The memory cells are not sized.** In the variant `sram` the cells use
+  the same transistors as the logic. A real cell is dimensioned for
+  stability and writability, and its bit lines are driven by a circuit, not
+  by ideal sources.
 - **No layout.** Wiring capacitance and resistance are not part of the
   simulation. There is a single load of 10 pF at the output.
 - **Four-terminal transistors.** The bulk of every NMOS is tied to ground

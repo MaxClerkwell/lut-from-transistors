@@ -58,19 +58,19 @@ VARIANTS = ("tgate", "pass", "sram")
 
 
 # Pins of the transistors: 1 = drain, 2 = gate, 3 = source, 4 = bulk
-def nmos(b, at, drain, gate, source, bulk="GND", rot=0, text=None):
+def nmos(b, label, at, drain, gate, source, bulk="GND", rot=0, text=None):
     text = text or ((10.16, -1.27), (10.16, 1.27))
     return b.part("Simulation_SPICE", "NMOS_Substrate", "Q", "NMOS", at,
-                  {1: drain, 2: gate, 3: source, 4: bulk}, rot=rot,
+                  {1: drain, 2: gate, 3: source, 4: bulk}, rot=rot, label=label,
                   fields={"Sim.Device": "NMOS", "Sim.Type": "MOS1",
                           "Sim.Pins": "1=D 2=G 3=S 4=B", "Sim.Params": NMOS_PARAMS},
                   ref_at=text[0], val_at=text[1])
 
 
-def pmos(b, at, drain, gate, source, bulk="+5V", rot=0, mirror=None, text=None):
+def pmos(b, label, at, drain, gate, source, bulk="+5V", rot=0, mirror=None, text=None):
     text = text or ((10.16, -1.27), (10.16, 1.27))
     return b.part("Simulation_SPICE", "PMOS_Substrate", "Q", "PMOS", at,
-                  {1: drain, 2: gate, 3: source, 4: bulk}, rot=rot, mirror=mirror,
+                  {1: drain, 2: gate, 3: source, 4: bulk}, rot=rot, mirror=mirror, label=label,
                   fields={"Sim.Device": "PMOS", "Sim.Type": "MOS1",
                           "Sim.Pins": "1=D 2=G 3=S 4=B", "Sim.Params": PMOS_PARAMS},
                   ref_at=text[0], val_at=text[1])
@@ -83,8 +83,8 @@ def inverter_block():
     """CMOS inverter: OUT = not IN."""
     b = Block("inverter", "inverter.kicad_sch", title="CMOS inverter")
     ox, oy = 56 * U, 40 * U
-    qp = pmos(b, (ox, oy - 3 * U), "OUT", "IN", "+5V", mirror="x")
-    qn = nmos(b, (ox, oy + 3 * U), "OUT", "IN", "GND")
+    qp = pmos(b, "qp", (ox, oy - 3 * U), "OUT", "IN", "+5V", mirror="x")
+    qn = nmos(b, "qn", (ox, oy + 3 * U), "OUT", "IN", "GND")
 
     gx = b.pin(qp, 2)[0]                                   # gates
     b.wire(b.pin(qp, 2), (gx, oy), b.pin(qn, 2))
@@ -114,7 +114,8 @@ def switch_block(variant):
     cx, cy = 56 * U, 40 * U
     xl, xr = cx - 3 * U, cx + 3 * U
 
-    qn = nmos(b, (cx, cy + 4 * U), "IN", "ON", "OUT", rot=90, text=((-7.62, 5.08), (7.62, 5.08)))
+    qn = nmos(b, "qn", (cx, cy + 4 * U), "IN", "ON", "OUT", rot=90,
+              text=((-7.62, 5.08), (7.62, 5.08)))
     b.wire(b.pin(qn, 1), (xl, cy + 3 * U), (xl, cy))
     b.wire(b.pin(qn, 3), (xr, cy + 3 * U), (xr, cy))
     gx, gy = b.pin(qn, 2)
@@ -123,7 +124,7 @@ def switch_block(variant):
     b.power("GND", b.pin(qn, 4), 180)
 
     if variant == "tgate":
-        qp = pmos(b, (cx, cy - 4 * U), "OUT", "ON_N", "IN", rot=270,
+        qp = pmos(b, "qp", (cx, cy - 4 * U), "OUT", "ON_N", "IN", rot=270,
                   text=((-7.62, -5.08), (7.62, -5.08)))
         b.wire(b.pin(qp, 3), (xl, cy - 3 * U), (xl, cy))
         b.wire(b.pin(qp, 1), (xr, cy - 3 * U), (xr, cy))
@@ -211,12 +212,12 @@ def sram_cell_block(inverter):
     text = ((-7.62, 5.08), (7.62, 5.08))
     size = (12 * U, 4 * U)
 
-    qa = nmos(b, (30 * U, 27 * U), "BL", "WL", "Q", rot=90, text=text)
+    qa = nmos(b, "qa", (30 * U, 27 * U), "BL", "WL", "Q", rot=90, text=text)
     b.port("BL", "input", (18 * U, y), 180)
     b.wire((18 * U, y), b.pin(qa, 1))
     b.wire(b.pin(qa, 3), (36 * U, y))
     b.label("Q", (36 * U, y), 0)
-    qb = nmos(b, (74 * U, 27 * U), "QN", "WL", "BLN", rot=90, text=text)
+    qb = nmos(b, "qb", (74 * U, 27 * U), "QN", "WL", "BLN", rot=90, text=text)
     b.wire((68 * U, y), b.pin(qb, 1))
     b.label("QN", (68 * U, y), 180)
     b.wire(b.pin(qb, 3), (86 * U, y))

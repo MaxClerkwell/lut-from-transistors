@@ -68,9 +68,14 @@ class Block:
 
     # -- content -----------------------------------------------------------
     def part(self, lib, name, prefix, value, at, pins, rot=0, mirror=None, fields=None,
-             ref_at=None, val_at=None):
-        """pins: pin number -> name of the net inside this block."""
+             ref_at=None, val_at=None, label=None):
+        """
+        pins: pin number -> name of the net inside this block.
+        label: name of the part inside the block, e.g. "qn"; together with the
+        names of the sheets it gives the part a path such as mux_n0.sw0.qn.
+        """
         p = dict(lib=lib, name=name, prefix=prefix, value=value, pins=pins, fields=fields or {},
+                 label=label,
                  placement=Placement(lib, name, at, rot, mirror, ref_at, val_at),
                  uuid=new_uuid(), local=len(self.parts))
         self.parts.append(p)
@@ -123,6 +128,7 @@ class Design:
         self.count = {}
         self.pages = 0
         self.symbol_refs = {}               # (block file, part uuid) -> [(path, reference)]
+        self.addresses = {}                 # reference -> path of names, e.g. "mux_n0.sw0.qn"
         self.sheet_pages = {}               # child uuid -> [(path of the parent, page)]
         self.blocks = {}                    # file name -> block
         self.instances = []                 # (hierarchical name, block)
@@ -159,6 +165,8 @@ class Design:
             for num, n in p["pins"].items():
                 part[num] += net(n)
             self.symbol_refs.setdefault((block.filename, p["uuid"]), []).append((path, ref))
+            if p["label"]:
+                self.addresses[ref] = f"{name}/{p['label']}".strip("/").replace("/", ".")
         for pw in block.powers:
             prefix = "#FLG" if pw["name"] == "PWR_FLAG" else "#PWR"
             ref = f"{prefix}{self.count.get(prefix, 0) + 1:03d}"

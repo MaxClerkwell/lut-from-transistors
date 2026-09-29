@@ -2,7 +2,7 @@
 	(version 20250114)
 	(generator "eeschema")
 	(generator_version "9.0")
-	(uuid "742eaedc-3fc8-4fde-8a18-558770514263")
+	(uuid "0e86b8b0-aa94-4768-aff0-292404e52e3e")
 	(paper "A4")
 	(title_block
 		(title "Output buffer")
@@ -18,7 +18,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "8ecc495d-c825-4ee3-83b3-b08d9e334607")
+		(uuid "3cbc10a8-a52e-463f-82af-b9f5a3866d53")
 	)
 	(wire
 		(pts
@@ -29,7 +29,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1da4d5b1-b08b-43ba-a00a-4e20143ef62a")
+		(uuid "f1e7607b-7d73-40d2-9d01-11f54714cc04")
 	)
 	(wire
 		(pts
@@ -40,7 +40,7 @@
 			(width 0)
 			(type default)
 		)
-		(uuid "1d5e28d7-61e0-4dfe-8fda-c9fb40677c05")
+		(uuid "243b053d-06b6-4f08-90a6-c876aace3aef")
 	)
 	(label "MID"
 		(at 149.86 81.28 0)
@@ -50,7 +50,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "064165b9-1416-4897-ad7a-928528114444")
+		(uuid "b1c26150-c854-4f89-939b-6d1470dd82e5")
 	)
 	(hierarchical_label "IN"
 		(shape input)
@@ -61,7 +61,7 @@
 			)
 			(justify right)
 		)
-		(uuid "ce2ac887-1f81-4995-9d36-bc39edd2c9ff")
+		(uuid "1b7456ec-8bac-414f-97a8-bdbeb63eeb11")
 	)
 	(hierarchical_label "OUT"
 		(shape output)
@@ -72,7 +72,7 @@
 			)
 			(justify left)
 		)
-		(uuid "49e345cd-ee76-49a9-8f6b-3b2d85474ce3")
+		(uuid "bee7dbbf-5755-4441-897d-7826c7b58f74")
 	)
 	(text "Output buffer: two inverters in series.\nThe first one restores the logic level, the second one restores the polarity."
 		(exclude_from_sim no)
@@ -83,7 +83,7 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "cbe55584-07c3-4265-ad96-fecb8b52b0a0")
+		(uuid "639a5674-0a55-47e7-924c-e17ce25b4fd2")
 	)
 	(sheet
 		(at 101.6 76.2)
@@ -99,7 +99,7 @@
 		(fill
 			(color 255 255 194 1.0000)
 		)
-		(uuid "7ba230f4-0d2c-4fc5-8f12-36e7ff56f185")
+		(uuid "9ceede7a-47bd-4872-90fb-a3f379b323de")
 		(property "Sheetname" "inv1"
 			(at 101.6 75.5 0)
 			(effects
@@ -120,7 +120,7 @@
 		)
 		(pin "IN" input
 			(at 101.6 81.28 180)
-			(uuid "25f555fb-daff-4f16-85ae-8e37a3dfbcfd")
+			(uuid "09474c03-bb10-40b5-9900-3e5324731535")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -130,7 +130,7 @@
 		)
 		(pin "OUT" output
 			(at 132.08 81.28 0)
-			(uuid "64d35747-41cc-4a3b-a154-7627a43a743a")
+			(uuid "ae4e72e3-1db7-43a5-831d-1c09e531fe1a")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -140,7 +140,7 @@
 		)
 		(instances
 			(project "lut2"
-				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/08ab94e4-bf7b-4354-b05e-3e0f57318742"
+				(path "/9acd262d-0f94-4acb-8554-5dc1cf6821c3/50041151-49e7-4bed-ac24-ab8453b75a40"
 					(page "14")
 				)
 			)
@@ -160,7 +160,7 @@
 		(fill
 			(color 255 255 194 1.0000)
 		)
-		(uuid "804bd13e-1401-4a61-83db-85bde71e5726")
+		(uuid "0dd71d94-ca53-4ced-a1e1-dfa96966884a")
 		(property "Sheetname" "inv2"
 			(at 167.64 75.5 0)
 			(effects
@@ -181,7 +181,7 @@
 		)
 		(pin "IN" input
 			(at 167.64 81.28 180)
-			(uuid "2865bd24-4fd4-47f1-b043-374bba091e09")
+			(uuid "0701d27c-6af7-4eae-a706-0da5abbb46db")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -191,7 +191,7 @@
 		)
 		(pin "OUT" output
 			(at 198.12 81.28 0)
-			(uuid "c6b9b1b6-04bc-4690-9a8a-a461a3ea1249")
+			(uuid "f27df866-a0f3-427b-b65e-2797350a1519")
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -201,7 +201,7 @@
 		)
 		(instances
 			(project "lut2"
-				(path "/c38d8a74-8579-45b6-bed4-4734773b8412/08ab94e4-bf7b-4354-b05e-3e0f57318742"
+				(path "/9acd262d-0f94-4acb-8554-5dc1cf6821c3/50041151-49e7-4bed-ac24-ab8453b75a40"
 					(page "15")
 				)
 			)

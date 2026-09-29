@@ -1,5 +1,7 @@
 # LUT with two inputs: simulation results
 
+Netlist taken from the KiCad schematics generated from lut.py.
+
 One transient run per variant covers all 16 functions. The inputs step through
 the four combinations in Gray code (index 0, 1, 3, 2) in steps of 200 ns. The
 table is rewritten every 800 ns, while the inputs are 00: in the variants

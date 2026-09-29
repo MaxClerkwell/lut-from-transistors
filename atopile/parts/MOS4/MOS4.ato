@@ -1,0 +1,30 @@
+#pragma experiment("TRAITS")
+"""
+Four-terminal MOS transistors: drain, gate, source and a separate bulk.
+
+These are generic devices for simulation. atopile is a tool for building
+boards and insists that every component is a purchasable part with a
+footprint, so both get a SOT-143 footprint (four pads) and a placeholder
+as supplier part number. The placeholder is not a real LCSC number.
+"""
+import is_atomic_part
+import has_part_picked
+import has_designator_prefix
+
+component NMOS4:
+    trait is_atomic_part<manufacturer="generic", partnumber="NMOS4", footprint="SOT-143.kicad_mod", symbol="">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="PLACEHOLDER-NMOS4", manufacturer="generic", partno="NMOS4">
+    trait has_designator_prefix<prefix="Q">
+    signal D ~ pin 1
+    signal G ~ pin 2
+    signal S ~ pin 3
+    signal B ~ pin 4
+
+component PMOS4:
+    trait is_atomic_part<manufacturer="generic", partnumber="PMOS4", footprint="SOT-143.kicad_mod", symbol="">
+    trait has_part_picked::by_supplier<supplier_id="lcsc", supplier_partno="PLACEHOLDER-PMOS4", manufacturer="generic", partno="PMOS4">
+    trait has_designator_prefix<prefix="Q">
+    signal D ~ pin 1
+    signal G ~ pin 2
+    signal S ~ pin 3
+    signal B ~ pin 4
