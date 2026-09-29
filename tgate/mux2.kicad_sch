@@ -1,0 +1,526 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "cbdf31ba-e662-4d03-a205-d6a8454ccccc")
+	(paper "A4")
+	(title_block
+		(title "2:1 multiplexer")
+		(comment 1 "Generated from the description in lut.py")
+	)
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 132.08 50.8)
+			(xy 124.46 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "166ee7b1-66b2-48ec-ba4e-5b324d79f09b")
+	)
+	(wire
+		(pts
+			(xy 167.64 50.8)
+			(xy 175.26 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d4474178-3891-42e9-878e-e67d4f97aa90")
+	)
+	(wire
+		(pts
+			(xy 132.08 55.88)
+			(xy 124.46 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8d101c23-23fd-45b8-8495-d5ed98474b9d")
+	)
+	(wire
+		(pts
+			(xy 132.08 60.96)
+			(xy 124.46 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0c848676-62bf-406d-b443-a5490ed383c0")
+	)
+	(wire
+		(pts
+			(xy 132.08 101.6)
+			(xy 124.46 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "209a0c0f-c86c-4ad3-95b1-d562116668ae")
+	)
+	(wire
+		(pts
+			(xy 167.64 101.6)
+			(xy 175.26 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b51da071-b417-4c84-acff-1ef252362786")
+	)
+	(wire
+		(pts
+			(xy 132.08 106.68)
+			(xy 124.46 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d7b2c407-9005-4f0a-a98f-076b88b00432")
+	)
+	(wire
+		(pts
+			(xy 132.08 111.76)
+			(xy 124.46 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "be59809b-ef9d-42c1-9c6a-2698dbcf3b6c")
+	)
+	(wire
+		(pts
+			(xy 55.88 55.88)
+			(xy 68.58 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b85ac91-c1cb-4bb2-94c2-647db1812914")
+	)
+	(wire
+		(pts
+			(xy 55.88 71.12)
+			(xy 68.58 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5cac563d-36ea-4862-a45e-8040e5009561")
+	)
+	(wire
+		(pts
+			(xy 55.88 86.36)
+			(xy 68.58 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f6d137b-789a-4050-9b0e-16ba5ca503f9")
+	)
+	(wire
+		(pts
+			(xy 55.88 101.6)
+			(xy 68.58 101.6)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0024b80c-2c8a-4cf0-903e-4e62be7c670a")
+	)
+	(wire
+		(pts
+			(xy 238.76 78.74)
+			(xy 226.06 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0b715019-e542-4cbf-ad33-bd522faa8b50")
+	)
+	(label "IN0"
+		(at 124.46 50.8 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "963aaa77-7ebe-4a5d-b5f3-37dbf5f08c94")
+	)
+	(label "OUT"
+		(at 175.26 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "351e5c31-cd02-4170-b998-ad2cf8f23ff6")
+	)
+	(label "SEL_N"
+		(at 124.46 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "e8c976df-27fa-433d-a163-33abc86669e6")
+	)
+	(label "SEL"
+		(at 124.46 60.96 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a5fcaa82-09d5-4ff0-a63d-53634c3c09c3")
+	)
+	(label "IN1"
+		(at 124.46 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "657300d1-f317-4f37-b4e0-6bc7ebf0b640")
+	)
+	(label "OUT"
+		(at 175.26 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e7a06db4-8d95-4866-9d01-a592b23d7d27")
+	)
+	(label "SEL"
+		(at 124.46 106.68 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "a9e95a3c-4d6b-470b-94e7-11843bad0618")
+	)
+	(label "SEL_N"
+		(at 124.46 111.76 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fb76fc82-5993-4371-a032-07e2c7bb68f7")
+	)
+	(label "IN0"
+		(at 68.58 55.88 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "161f4a77-4fcc-40ad-9714-6bd30cfecd1c")
+	)
+	(label "IN1"
+		(at 68.58 71.12 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "877b2bc5-809f-4493-9904-1dff636ca129")
+	)
+	(label "SEL"
+		(at 68.58 86.36 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c35912b8-b7ef-4e88-800c-04ce1f6ebdeb")
+	)
+	(label "SEL_N"
+		(at 68.58 101.6 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ff88dab3-479f-44b2-a692-7b0c372cd4df")
+	)
+	(label "OUT"
+		(at 226.06 78.74 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "c2d32859-5e5e-486b-8df4-8cc4797fb707")
+	)
+	(hierarchical_label "IN0"
+		(shape passive)
+		(at 55.88 55.88 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9212a996-cb40-433f-bb25-cef45a73dfcc")
+	)
+	(hierarchical_label "IN1"
+		(shape passive)
+		(at 55.88 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1f33f4d3-b7a4-4dc2-b19a-a72b35f003d5")
+	)
+	(hierarchical_label "SEL"
+		(shape input)
+		(at 55.88 86.36 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b4a7b39e-9e7a-4ae8-8d5d-e8ced1a5b31e")
+	)
+	(hierarchical_label "SEL_N"
+		(shape input)
+		(at 55.88 101.6 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "f750e329-a5fa-420a-ace0-dac60d610015")
+	)
+	(hierarchical_label "OUT"
+		(shape passive)
+		(at 238.76 78.74 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6089d2bd-942b-4e6b-aa60-06e6556e8686")
+	)
+	(text "2:1 multiplexer: OUT = IN1 if SEL = 1, otherwise IN0.\nExactly one of the two switches is closed."
+		(exclude_from_sim no)
+		(at 50.8 25.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0f46ff1c-8d4b-443e-b9fe-0cb562a30bb1")
+	)
+	(sheet
+		(at 132.08 45.72)
+		(size 35.56 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "1df07d44-064c-49ce-a598-37360f0e58d1")
+		(property "Sheetname" "sw0"
+			(at 132.08 45.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "switch.kicad_sch"
+			(at 132.08 66.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "IN" passive
+			(at 132.08 50.8 180)
+			(uuid "e2a50e4b-7f2f-4099-9237-75bea06047fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ON" input
+			(at 132.08 55.88 180)
+			(uuid "b77af2db-2338-40d2-8a5b-dd01ad4515dc")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ON_N" input
+			(at 132.08 60.96 180)
+			(uuid "7477cf6c-df4f-4fdc-992d-229dc0e3b7f8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "OUT" passive
+			(at 167.64 50.8 0)
+			(uuid "0f51b0ef-e7c4-4477-8b5e-af951d3ec18b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "lut2"
+				(path "/223bd378-8cc6-416e-8e86-c412aeac66b2/f4c74032-08f0-40bf-bb65-797012f4602f"
+					(page "5")
+				)
+				(path "/223bd378-8cc6-416e-8e86-c412aeac66b2/967865db-6315-48bd-bf7b-9358230715e3"
+					(page "8")
+				)
+				(path "/223bd378-8cc6-416e-8e86-c412aeac66b2/80fd6b07-d35e-4074-b4a8-722ffeec0795"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 132.08 96.52)
+		(size 35.56 20.32)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "c1d27e61-0a99-4bcc-a93c-09d873dbd601")
+		(property "Sheetname" "sw1"
+			(at 132.08 95.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "switch.kicad_sch"
+			(at 132.08 117.44 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "IN" passive
+			(at 132.08 101.6 180)
+			(uuid "39b68a8b-501d-423b-b663-5454575c43ac")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ON" input
+			(at 132.08 106.68 180)
+			(uuid "28a860fb-f82e-4cb4-83b5-56f62544d785")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "ON_N" input
+			(at 132.08 111.76 180)
+			(uuid "b531ab43-cc22-4045-ba6f-f2afc2e972d0")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "OUT" passive
+			(at 167.64 101.6 0)
+			(uuid "8007d11d-f27d-42a6-ad13-c59c34fe21fe")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "lut2"
+				(path "/223bd378-8cc6-416e-8e86-c412aeac66b2/f4c74032-08f0-40bf-bb65-797012f4602f"
+					(page "6")
+				)
+				(path "/223bd378-8cc6-416e-8e86-c412aeac66b2/967865db-6315-48bd-bf7b-9358230715e3"
+					(page "9")
+				)
+				(path "/223bd378-8cc6-416e-8e86-c412aeac66b2/80fd6b07-d35e-4074-b4a8-722ffeec0795"
+					(page "12")
+				)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

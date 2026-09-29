@@ -3,7 +3,8 @@
 Simulate the LUT schematics with ngspice and write the result as a VCD file
 for GTKWave.
 
-The schematic is exported to a SPICE netlist with `kicad-cli`. One transient
+The hierarchical schematic <variant>/lut2.kicad_sch is exported to a flat
+SPICE netlist with `kicad-cli`. One transient
 run covers all 16 functions of two inputs: every 800 ns the four table bits
 are rewritten, the way a new bitstream would rewrite the SRAM cells of an
 FPGA, while the inputs step through all four combinations in Gray code
@@ -48,7 +49,9 @@ GRAY = (0, 1, 3, 2)         # table index during the four steps of a function
 
 FUNCTIONS = ["0", "NOR", "A AND NOT B", "NOT B", "B AND NOT A", "NOT A", "XOR", "NAND",
              "AND", "XNOR", "A", "A OR NOT B", "B", "B OR NOT A", "OR", "1"]
-NODES = ("a", "b", "t0", "t1", "t2", "t3", "n0", "n1", "yi", "yb", "y")
+# name used in the results -> node of the netlist; nets inside a sheet carry its name
+NODES = {"a": "a", "b": "b", "t0": "t0", "t1": "t1", "t2": "t2", "t3": "t3",
+         "n0": "n0", "n1": "n1", "yi": "yi", "yb": "buffer_mid", "y": "y"}
 
 
 # ---------------------------------------------------------------------------
@@ -82,7 +85,7 @@ class Netlist:
 
     @staticmethod
     def net(name):
-        n = name.lstrip("/").lower()
+        n = name.lstrip("/").lower().replace("/", "_").replace("-", "_")
         return {"gnd": "0", "0": "0", "+5v": "vdd"}.get(n, n)
 
     def set_source(self, positive_net, spec):
@@ -308,7 +311,8 @@ def run(ng, nl, name, t_end):
     ng.command("destroy all")
     ng.load_netlist(nl.render(name))
     ng.run(f"tran 0.2n {t_end:g} 0 0.2n")
-    return ng.vector("time"), {n: ng.vector(f"v({n})") for n in NODES}, ng.vector("i(v1)")
+    return (ng.vector("time"), {n: ng.vector(f"v({node})") for n, node in NODES.items()},
+            ng.vector("i(v1)"))
 
 
 def main():
@@ -322,7 +326,7 @@ def main():
 
     for variant in VARIANTS:
         name = f"lut2_{variant}"
-        nl = Netlist(HERE / f"{name}.kicad_sch")
+        nl = Netlist(HERE / variant / "lut2.kicad_sch")
         stimulus(nl)
         (args.results / f"{name}.cir").write_text(nl.render(f"LUT with two inputs, {variant}"))
         t, v, i_supply = run(ng, nl, name, T_END)

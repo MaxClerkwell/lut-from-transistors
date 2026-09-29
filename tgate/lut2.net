@@ -2,7 +2,7 @@
   (version "D")
   (design
     (source "generate.py")
-    (date "09/29/2026 02:52 PM")
+    (date "09/29/2026 03:43 PM")
     (tool "SKiDL (2.3.0)")
     (sheet
       (number 1)
@@ -55,9 +55,9 @@
         (field
           (name "Datasheet"))
         (field
-          (name "SKiDL Tag") "QOGQVTuet1")
+          (name "SKiDL Tag") "oa5187S5Eg")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Device")
         (part "C"))
@@ -65,7 +65,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "656dd4db-2e40-5e4a-84f6-49c6adc81daa"))
+      (tstamps "6dd73e47-20ce-5f11-90de-97fe89881977"))
     (comp
       (ref "Q1")
       (value "PMOS")
@@ -87,9 +87,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "eqHMfICAis")
+          (name "SKiDL Tag") "oPQlzkW66s")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -97,7 +97,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "08176920-1e28-5954-aa22-7b5004b3514c"))
+      (tstamps "da187af2-8d9a-5555-b8dd-d87e5e3213a2"))
     (comp
       (ref "Q10")
       (value "PMOS")
@@ -119,9 +119,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "kMeoJIgTZ3")
+          (name "SKiDL Tag") "lnCUmebIaX")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -129,7 +129,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "d9ae2308-9a20-5b16-b864-358546e3acec"))
+      (tstamps "d08b288a-63ee-55f1-926f-dfa076a6fee5"))
     (comp
       (ref "Q11")
       (value "NMOS")
@@ -151,9 +151,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "4TczvrbmN7")
+          (name "SKiDL Tag") "yMYxIb6P1X")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -161,7 +161,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "5f6b1141-d2b6-5ee8-8b20-cd0b3fbc4a8c"))
+      (tstamps "66d98615-0080-50c9-b37e-6160bafcae99"))
     (comp
       (ref "Q12")
       (value "PMOS")
@@ -183,9 +183,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "49UA62mtXm")
+          (name "SKiDL Tag") "4E5Jb6qAOp")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -193,7 +193,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "814e20ec-2d3d-5810-857d-69f70a4e4a6c"))
+      (tstamps "008a4ff8-d3a6-5859-b230-48c58caa45df"))
     (comp
       (ref "Q13")
       (value "NMOS")
@@ -215,9 +215,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "tsL2loC7zG")
+          (name "SKiDL Tag") "2JvMomklvO")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -225,7 +225,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "c087d983-3283-525f-b67c-8dffaa8c4f05"))
+      (tstamps "c1acdd47-8e77-589d-9d19-02151c40bc3f"))
     (comp
       (ref "Q14")
       (value "PMOS")
@@ -247,9 +247,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "GZXkeV6AnS")
+          (name "SKiDL Tag") "riteRZakvs")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -257,7 +257,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "e8a04141-8378-565d-b59b-013e04e624f3"))
+      (tstamps "e3630940-e335-546f-b41e-1878f846759b"))
     (comp
       (ref "Q15")
       (value "NMOS")
@@ -279,9 +279,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "_P7wpwhEj5")
+          (name "SKiDL Tag") "RqpJkZNYzk")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -289,7 +289,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "513802e2-2309-532e-8a61-4d8785bd217e"))
+      (tstamps "0166a77d-544b-5f9d-b9d3-c6060782ae9e"))
     (comp
       (ref "Q16")
       (value "PMOS")
@@ -311,9 +311,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "J5PBLiZFCx")
+          (name "SKiDL Tag") "NpTg55_wV5")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -321,7 +321,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "87dfcebd-e49b-5623-afff-d15733e07d8b"))
+      (tstamps "5a551996-145d-55a0-971c-569fbcc8db94"))
     (comp
       (ref "Q17")
       (value "PMOS")
@@ -343,9 +343,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "abukFhPz6P")
+          (name "SKiDL Tag") "oK4eTMkwQ0")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -353,7 +353,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "68d7244c-4721-5252-9a59-406ad335f9cd"))
+      (tstamps "01ca3943-f492-5ea3-8211-dd3f0c42622b"))
     (comp
       (ref "Q18")
       (value "NMOS")
@@ -375,9 +375,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "A9T48awYyD")
+          (name "SKiDL Tag") "KobZsGqL1C")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -385,7 +385,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "5d07053a-9b25-5ec0-9e07-327edc233596"))
+      (tstamps "f0e25c20-8b15-5bb8-b8da-3ee8173bd4c5"))
     (comp
       (ref "Q19")
       (value "PMOS")
@@ -407,9 +407,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "DAZIaPZiH0")
+          (name "SKiDL Tag") "IdyrJYd6Dp")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -417,7 +417,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "5ed8ccd5-53d0-5c86-931c-0f368dc4fc3a"))
+      (tstamps "50611b8f-84e9-5840-b4fd-3f4c3ef4e338"))
     (comp
       (ref "Q2")
       (value "NMOS")
@@ -439,9 +439,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "fnHRbAB_QO")
+          (name "SKiDL Tag") "EqFIyJozG9")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -449,7 +449,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "de13ebf6-8fe2-5707-b9dc-2b51893eaccf"))
+      (tstamps "2c4a0696-2533-5039-a6d8-264aae0d8a30"))
     (comp
       (ref "Q20")
       (value "NMOS")
@@ -471,9 +471,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "Ubs03Fqkqb")
+          (name "SKiDL Tag") "al2AC058E2")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -481,7 +481,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "4c36ebae-6feb-54b7-9e32-9de013572df6"))
+      (tstamps "682b187c-83f7-5284-8764-939747285e8e"))
     (comp
       (ref "Q3")
       (value "PMOS")
@@ -503,9 +503,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "nyUliNEBap")
+          (name "SKiDL Tag") "GpTSvemesJ")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -513,7 +513,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "3f1e944c-c92d-58cd-8e90-46ebe99e5020"))
+      (tstamps "23ca4712-2e08-511f-9651-ad73f46e1561"))
     (comp
       (ref "Q4")
       (value "NMOS")
@@ -535,9 +535,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "vlI22JF5Zq")
+          (name "SKiDL Tag") "0ZSjefvmE0")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -545,7 +545,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "18fb72fb-98d1-52fe-a614-474303b68052"))
+      (tstamps "bd6a502d-a570-5a4a-9192-f41952f230e4"))
     (comp
       (ref "Q5")
       (value "NMOS")
@@ -567,9 +567,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "3DLoIaUzWo")
+          (name "SKiDL Tag") "NQ7_i8_RsW")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -577,7 +577,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "66c3e126-0f2b-55b6-a1dc-d7ecfaeeda50"))
+      (tstamps "0f107715-9cce-5c98-851e-d540045475d1"))
     (comp
       (ref "Q6")
       (value "PMOS")
@@ -599,9 +599,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "1_KboOSQak")
+          (name "SKiDL Tag") "EJ715pIxrc")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -609,7 +609,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "392fa172-1105-598f-85a8-a34b5d78dd46"))
+      (tstamps "27adf684-0cb7-5a85-a659-597708861a1a"))
     (comp
       (ref "Q7")
       (value "NMOS")
@@ -631,9 +631,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "WsIyBk7s54")
+          (name "SKiDL Tag") "JuhIJ9OO3R")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -641,7 +641,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "044d6c7f-6b5b-5889-a344-8415d46c7e7a"))
+      (tstamps "70a27e7d-35ab-59e7-ab77-10aceca92997"))
     (comp
       (ref "Q8")
       (value "PMOS")
@@ -663,9 +663,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "pBm4pNCRXG")
+          (name "SKiDL Tag") "zV__MjQMhL")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "PMOS_Substrate"))
@@ -673,7 +673,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "12009dd6-001f-5856-bdd6-27f6d9c2a893"))
+      (tstamps "3ed0c4c3-e608-5e39-ba04-aeba963a0586"))
     (comp
       (ref "Q9")
       (value "NMOS")
@@ -695,9 +695,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs")
         (field
-          (name "SKiDL Tag") "IlSjnDaDft")
+          (name "SKiDL Tag") "B60FWlDy47")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "NMOS_Substrate"))
@@ -705,7 +705,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "673b4e22-ddbd-50eb-b3bd-f4e56d8a42fc"))
+      (tstamps "ee5b708e-1312-51c0-a8a6-66df15e62f5d"))
     (comp
       (ref "V1")
       (value "5")
@@ -721,9 +721,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "D0dMHVnlQJ")
+          (name "SKiDL Tag") "2gPKZBP00R")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "VDC"))
@@ -731,15 +731,15 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "58c47d38-a31e-5a09-affa-e1649a6809c6"))
+      (tstamps "0598285b-82f8-5f74-8b27-7c724183369e"))
     (comp
-      (ref "VA1")
+      (ref "V2")
       (value "A")
       (description "Voltage source, pulse")
       (footprint "simulation:none")
       (fields
         (field
-          (name "Sim.Params") "y1=0 y2=5 td=100n tr=1n tf=1n tw=100n per=200n")
+          (name "Sim.Params") "y1=0 y2=5 td=200n tr=1n tf=1n tw=399n per=800n")
         (field
           (name "Description") "Voltage source, pulse")
         (field
@@ -747,9 +747,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "_9EVM64Ptk")
+          (name "SKiDL Tag") "sghYV1QFIQ")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "VPULSE"))
@@ -757,15 +757,15 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "e41aeb2a-92f4-59f7-87d1-b4f24ce67556"))
+      (tstamps "621e2c16-72a0-5335-916a-b21b36992663"))
     (comp
-      (ref "VB1")
+      (ref "V3")
       (value "B")
       (description "Voltage source, pulse")
       (footprint "simulation:none")
       (fields
         (field
-          (name "Sim.Params") "y1=0 y2=5 td=200n tr=1n tf=1n tw=200n per=400n")
+          (name "Sim.Params") "y1=0 y2=5 td=400n tr=1n tf=1n tw=399n per=800n")
         (field
           (name "Description") "Voltage source, pulse")
         (field
@@ -773,9 +773,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "obdeWMyDzL")
+          (name "SKiDL Tag") "cw4NQsVYaS")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "VPULSE"))
@@ -783,9 +783,9 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "56f71b32-66c8-5679-b589-813a914ba080"))
+      (tstamps "641eb1de-e36f-509e-9074-e3f94ff15ab7"))
     (comp
-      (ref "VT0")
+      (ref "V4")
       (value "0")
       (description "Voltage source, DC")
       (footprint "simulation:none")
@@ -799,9 +799,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "pUv9ar8DoU")
+          (name "SKiDL Tag") "lVKkHFpC86")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "VDC"))
@@ -809,9 +809,9 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "ec119f6d-0aeb-5540-aa48-a6421050b246"))
+      (tstamps "a4da7a41-9a36-5d89-b857-383e1f0450a7"))
     (comp
-      (ref "VT1")
+      (ref "V5")
       (value "5")
       (description "Voltage source, DC")
       (footprint "simulation:none")
@@ -825,9 +825,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "GHc_L6s_75")
+          (name "SKiDL Tag") "zfAa2USRIX")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "VDC"))
@@ -835,9 +835,9 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "3e2e2a7d-0ec6-5b66-aa3b-ede24c9d1903"))
+      (tstamps "3dc87536-c901-5050-9ed8-ca8baa890619"))
     (comp
-      (ref "VT2")
+      (ref "V6")
       (value "5")
       (description "Voltage source, DC")
       (footprint "simulation:none")
@@ -851,9 +851,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "kgsxz3Y0b1")
+          (name "SKiDL Tag") "u96z51iRxO")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "VDC"))
@@ -861,9 +861,9 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "5b435ad8-40c5-576b-8aaf-d86de577c0d7"))
+      (tstamps "daa7579d-5a5f-5b3b-a507-d5f6d65f8749"))
     (comp
-      (ref "VT3")
+      (ref "V7")
       (value "0")
       (description "Voltage source, DC")
       (footprint "simulation:none")
@@ -877,9 +877,9 @@
         (field
           (name "Datasheet") "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#sec_Independent_Sources_for")
         (field
-          (name "SKiDL Tag") "nc_6hyEU3_")
+          (name "SKiDL Tag") "sRV6sJUXQh")
         (field
-          (name "SKiDL Line") "lut.py:88"))
+          (name "SKiDL Line") "hier.py:156"))
       (libsource
         (lib "Simulation_SPICE")
         (part "VDC"))
@@ -887,7 +887,7 @@
         (names "/")
         (tstamps "/"))
       (component_classes)
-      (tstamps "3fbfeeb1-653c-5887-a3e2-4c82767da081")))
+      (tstamps "7996c996-0b77-5c92-9adc-34070ef103bd")))
   (nets
     (net
       (code 1)
@@ -982,7 +982,7 @@
         (pin "2")
         (pintype "INPUT"))
       (node
-        (ref "VA1")
+        (ref "V2")
         (pin "1")
         (pintype "PASSIVE")))
     (net
@@ -1034,7 +1034,7 @@
         (pin "2")
         (pintype "INPUT"))
       (node
-        (ref "VB1")
+        (ref "V3")
         (pin "1")
         (pintype "PASSIVE")))
     (net
@@ -1126,27 +1126,27 @@
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "VA1")
+        (ref "V2")
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "VB1")
+        (ref "V3")
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "VT0")
+        (ref "V4")
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "VT1")
+        (ref "V5")
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "VT2")
+        (ref "V6")
         (pin "2")
         (pintype "PASSIVE"))
       (node
-        (ref "VT3")
+        (ref "V7")
         (pin "2")
         (pintype "PASSIVE")))
     (net
@@ -1218,7 +1218,7 @@
         (pin "3")
         (pintype "PASSIVE"))
       (node
-        (ref "VT0")
+        (ref "V4")
         (pin "1")
         (pintype "PASSIVE")))
     (net
@@ -1234,7 +1234,7 @@
         (pin "3")
         (pintype "PASSIVE"))
       (node
-        (ref "VT1")
+        (ref "V5")
         (pin "1")
         (pintype "PASSIVE")))
     (net
@@ -1250,7 +1250,7 @@
         (pin "1")
         (pintype "PASSIVE"))
       (node
-        (ref "VT2")
+        (ref "V6")
         (pin "1")
         (pintype "PASSIVE")))
     (net
@@ -1266,7 +1266,7 @@
         (pin "3")
         (pintype "PASSIVE"))
       (node
-        (ref "VT3")
+        (ref "V7")
         (pin "1")
         (pintype "PASSIVE")))
     (net
@@ -1287,26 +1287,6 @@
         (pintype "PASSIVE")))
     (net
       (code 14)
-      (name "YB")
-      (class "Default")
-      (node
-        (ref "Q17")
-        (pin "1")
-        (pintype "PASSIVE"))
-      (node
-        (ref "Q18")
-        (pin "1")
-        (pintype "PASSIVE"))
-      (node
-        (ref "Q19")
-        (pin "2")
-        (pintype "INPUT"))
-      (node
-        (ref "Q20")
-        (pin "2")
-        (pintype "INPUT")))
-    (net
-      (code 15)
       (name "YI")
       (class "Default")
       (node
@@ -1331,5 +1311,25 @@
         (pintype "INPUT"))
       (node
         (ref "Q18")
+        (pin "2")
+        (pintype "INPUT")))
+    (net
+      (code 15)
+      (name "buffer/MID")
+      (class "Default")
+      (node
+        (ref "Q17")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q18")
+        (pin "1")
+        (pintype "PASSIVE"))
+      (node
+        (ref "Q19")
+        (pin "2")
+        (pintype "INPUT"))
+      (node
+        (ref "Q20")
         (pin "2")
         (pintype "INPUT")))))

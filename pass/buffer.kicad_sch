@@ -1,0 +1,211 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "a23f5222-2f8b-4a5d-b9fb-b2c32e96a157")
+	(paper "A4")
+	(title_block
+		(title "Output buffer")
+		(comment 1 "Generated from the description in lut.py")
+	)
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 71.12 81.28)
+			(xy 101.6 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "486d22b2-a59f-485a-8063-d107c76e5771")
+	)
+	(wire
+		(pts
+			(xy 132.08 81.28)
+			(xy 167.64 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b98ad84f-d153-4554-923f-abb57c78a601")
+	)
+	(wire
+		(pts
+			(xy 198.12 81.28)
+			(xy 228.6 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c20f7444-f2f1-41c1-8b73-8dd158292353")
+	)
+	(label "MID"
+		(at 149.86 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fe572957-c68a-4358-a036-52065437d1bf")
+	)
+	(hierarchical_label "IN"
+		(shape input)
+		(at 71.12 81.28 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "1bde9ea0-b42a-42de-a85d-59bba02899a0")
+	)
+	(hierarchical_label "OUT"
+		(shape output)
+		(at 228.6 81.28 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9655fcbe-b07d-481f-bb41-d78f932b1702")
+	)
+	(text "Output buffer: two inverters in series.\nThe first one restores the logic level, the second one restores the polarity."
+		(exclude_from_sim no)
+		(at 71.12 50.8 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4ac495b7-b91a-490f-a267-1a7903c86721")
+	)
+	(sheet
+		(at 101.6 76.2)
+		(size 30.48 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "13b7dffb-6465-455b-aa49-aaae7d1a1144")
+		(property "Sheetname" "inv1"
+			(at 101.6 75.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "inverter.kicad_sch"
+			(at 101.6 86.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "IN" input
+			(at 101.6 81.28 180)
+			(uuid "13b942a0-53eb-4470-865d-0fe52e80caa7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "OUT" output
+			(at 132.08 81.28 0)
+			(uuid "6be9690c-aa30-4ec0-b1ec-422473977817")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "lut2"
+				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/4022cb3e-315f-4873-8c16-e48fcbf0ea52"
+					(page "14")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 167.64 76.2)
+		(size 30.48 10.16)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 255 255 194 1.0000)
+		)
+		(uuid "8e7cc8de-b010-4d99-aeda-a1571ac2a606")
+		(property "Sheetname" "inv2"
+			(at 167.64 75.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "inverter.kicad_sch"
+			(at 167.64 86.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "IN" input
+			(at 167.64 81.28 180)
+			(uuid "f35b0fbd-8c1d-4ef0-9f06-846bca3efe7d")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "OUT" output
+			(at 198.12 81.28 0)
+			(uuid "fdba3857-fbbc-4aac-a16a-9ac2285ba326")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "lut2"
+				(path "/0dc87b3a-6b6e-44e0-ae5b-3fdbbbd57e4b/4022cb3e-315f-4873-8c16-e48fcbf0ea52"
+					(page "15")
+				)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

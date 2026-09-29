@@ -40,10 +40,40 @@ repository contains both.
 
 | Variant | Switch | Transistors | Schematic |
 |---|---|---|---|
-| `tgate` | transmission gate, NMOS and PMOS in parallel | 20 | `lut2_tgate.kicad_sch` |
-| `pass` | a single NMOS pass transistor | 14 | `lut2_pass.kicad_sch` |
+| `tgate` | transmission gate, NMOS and PMOS in parallel | 20 | `tgate/lut2.kicad_sch` |
+| `pass` | a single NMOS pass transistor | 14 | `pass/lut2.kicad_sch` |
 
-![Schematic of the transmission-gate variant](docs/lut2_tgate.svg)
+## A hierarchical schematic
+
+The schematic is hierarchical. Every building block is drawn once, on a
+sheet of its own, and used as often as needed.
+
+| Sheet | File | Content | Used |
+|---|---|---|---|
+| `lut2` | `lut2.kicad_sch` | sources, load, and the sheets below | 1 |
+| `inverter` | `inverter.kicad_sch` | one PMOS, one NMOS | 4 |
+| `mux2` | `mux2.kicad_sch` | two switches | 3 |
+| `switch` | `switch.kicad_sch` | one or two transistors | 6 |
+| `buffer` | `buffer.kicad_sch` | two inverters | 1 |
+
+Five files describe 15 sheets. The hierarchy is three levels deep: the
+transistors of a switch sit in `lut2 / mux_n0 / sw0`.
+
+![Root sheet](docs/tgate/lut2.svg)
+
+The root sheet shows the structure of the LUT: two inverters for the
+complements of the inputs, two multiplexers selected by A, one selected by
+B, and the buffer.
+
+![Multiplexer sheet](docs/tgate/lut2-mux_n0.svg)
+
+![Switch sheet](docs/tgate/lut2-mux_n0-sw0.svg)
+
+In KiCad a sheet that is used several times stores the references of its
+symbols once per use. The transistors of `switch.kicad_sch` are Q5 and Q6
+in `mux_n0 / sw0` and Q15 and Q16 in `mux_y / sw1`. `hier.py` takes care
+of this: it walks the hierarchy, creates the flat SKiDL circuit and writes
+every sheet with the references of all its uses.
 
 ## Results
 
@@ -139,19 +169,21 @@ One transient run of 12.8 µs per variant covers all 16 functions.
   the table.
 
 The netlist that is simulated is exported from the KiCad schematic with
-`kicad-cli`, so the schematic is what gets simulated.
+`kicad-cli`, which flattens the hierarchy, so the schematic is what gets
+simulated.
 
 ## Files
 
 | File | Content |
 |---|---|
-| `lut.py` | SKiDL description: blocks `inverter`, `switch`, `mux`, and the circuit `lut2` |
+| `lut.py` | the design: sheets `inverter`, `switch`, `mux2`, `buffer` and the root `lut2` |
+| `hier.py` | hierarchy: elaborates the sheets into a flat SKiDL circuit and writes the KiCad sheets |
 | `generate.py` | writes netlists and schematics, verifies the schematic against the SKiDL circuit |
 | `simulate.py` | simulation, analysis, VCD and GTKWave files, plots |
 | `vcd.py` | VCD writer |
 | `kicad_sch.py`, `ngspice.py` | schematic writer and ngspice wrapper, from [naive-diff-amp-comperator](https://github.com/MaxClerkwell/naive-diff-amp-comperator) |
-| `lut2_*.kicad_sch`, `lut2_*.net` | generated schematics and netlists |
-| `docs/` | renderings of the schematics |
+| `tgate/`, `pass/` | generated KiCad projects: root sheet `lut2.kicad_sch`, four sub-sheets, netlist `lut2.net` |
+| `docs/` | renderings: one SVG per sheet, one PDF per variant |
 | `results/` | VCD and GTKWave files, plots, netlists, `summary.md` |
 
 ## Usage
@@ -162,7 +194,11 @@ uv run simulate.py      # schematics -> ngspice -> results/
 ```
 
 `generate.py` ends with `schematic <-> SKiDL netlist: IDENTICAL` for both
-variants. It overwrites the schematics, including manual changes.
+variants. It overwrites the schematics, including manual changes. KiCad's
+electrical rules check reports no violations for either variant.
+
+Open a schematic with `eeschema tgate/lut2.kicad_sch`. A double click on a
+sheet symbol enters the sheet.
 
 Requirements: [uv](https://docs.astral.sh/uv/), Python 3.10 or newer,
 KiCad 9 or 10 with `kicad-cli` and the symbol libraries in
