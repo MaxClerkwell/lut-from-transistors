@@ -8,3 +8,4 @@ fp-info-cache
 *.erc
 *.log
 results/*.csv
+*_sklib.py
