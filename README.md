@@ -1,5 +1,8 @@
 # A look-up table built from transistors
 
+[![DOI](https://zenodo.org/badge/1400545891.svg)](https://zenodo.org/badge/latestdoi/1400545891)
+[![CI](https://github.com/MaxClerkwell/lut-from-transistors/actions/workflows/ci.yml/badge.svg)](https://github.com/MaxClerkwell/lut-from-transistors/actions/workflows/ci.yml)
+
 A LUT with two inputs, the logic element of an FPGA, built from 20 MOS
 transistors. The circuit is described in Python with
 [SKiDL](https://devbisme.github.io/skidl/), drawn as a KiCad schematic,
