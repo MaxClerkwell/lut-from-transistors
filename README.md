@@ -147,6 +147,14 @@ gtkwave results/lut2.vcd results/lut2.gtkw
 gtkwave results/lut2_glitch.vcd results/lut2_glitch.gtkw
 ```
 
+![GTKWave showing the function window of XOR](docs/gtkwave.png)
+
+The view shows the window from 4.8 µs to 5.6 µs: the table changes from
+5 (NOT A) to 6 (XOR) at the marker, then the index steps through 0, 1, 3,
+2, and `y` follows the table entry. The analog traces below show the
+multiplexer nodes N0 and N1, the tree output YI, and the two stages of
+the buffer.
+
 The `.gtkw` file sets up the view: the table as a hexadecimal number, the
 inputs, the selected index and the output as logic signals, and below them
 the node voltages as analog traces.
