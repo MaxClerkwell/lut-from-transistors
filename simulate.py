@@ -3,30 +3,26 @@
 Simulate the LUT schematics with ngspice and write the result as a VCD file
 for GTKWave.
 
-The hierarchical schematic <variant>/lut2.kicad_sch is exported to a flat
-SPICE netlist with `kicad-cli`. One transient
-run covers all 16 functions of two inputs: every 800 ns the four table bits
-are rewritten, the way a new bitstream would rewrite the SRAM cells of an
-FPGA, while the inputs step through all four combinations in Gray code
+The hierarchical schematic schematic/lut2.kicad_sch is exported to a flat
+SPICE netlist with `kicad-cli`. One transient run covers all 16 functions
+of two inputs: every 800 ns the four table bits, the voltage sources that
+configure the LUT, are rewritten, the way a new bitstream would reconfigure
+an FPGA, while the inputs step through all four combinations in Gray code
 (index 0, 1, 3, 2), so that only one input changes at a time. A second,
 short run changes both inputs at the same instant and looks for glitches.
 
 Usage: uv run simulate.py [--results DIR]
 
-In the variant `sram` the table bits are not sources but SRAM cells. Each
-rewrite of the table is a sequence of four write cycles: the bit lines are
-set to the value, then the word line of one cell is pulsed.
+Results:
+  results/lut2.vcd       logic values and node voltages, for GTKWave
+  results/lut2.gtkw      GTKWave save file: signal list and analog traces
+  results/lut2_glitch.vcd, .gtkw    the glitch experiment
+  results/lut2.csv       the node voltages
+  results/lut2.cir       the simulated netlist
+  results/lut2.png       overview plot
+  results/summary.md     truth table, delays, levels, supply current
 
-Results, for each variant (tgate, pass, sram):
-  results/lut2_<variant>.vcd     logic values and node voltages, for GTKWave
-  results/lut2_<variant>.gtkw    GTKWave save file: signal list and analog traces
-  results/lut2_<variant>_glitch.vcd, .gtkw    the glitch experiment
-  results/lut2_<variant>.csv     the node voltages
-  results/lut2_<variant>.cir     the simulated netlist
-  results/lut2_<variant>.png     overview plot
-  results/summary.md             truth tables, delays, levels, supply current
-
-View:  gtkwave results/lut2_tgate.vcd results/lut2_tgate.gtkw
+View:  gtkwave results/lut2.vcd results/lut2.gtkw
 """
 
 import argparse
@@ -38,7 +34,7 @@ from pathlib import Path
 
 import numpy as np
 
-from lut import VARIANTS, VDD
+from lut import VDD
 from ngspice import NgSpice
 from vcd import VCD
 
@@ -50,13 +46,6 @@ T_EDGE = 1e-9               # rise and fall time of all sources
 T_WRITE = T_STEP / 2         # the table is rewritten this long after the start of a function
 T_END = 16 * T_FUNC
 GRAY = (0, 1, 3, 2)         # table index during the four steps of a function
-
-# write sequence of the SRAM variant, within the first T_WRITE of a function
-T_CYCLE = 22e-9             # one write cycle per cell
-T_SETUP = 3e-9              # bit lines are set this long before the word line rises
-T_PULSE = 14e-9             # width of the word-line pulse
-T_FIRST = 6e-9              # start of the first write cycle
-SRAM_NODES = {"bl": "bl", "bln": "bln", "wl0": "wl0", "wl1": "wl1", "wl2": "wl2", "wl3": "wl3"}
 
 FUNCTIONS = ["0", "NOR", "A AND NOT B", "NOT B", "B AND NOT A", "NOT A", "XOR", "NAND",
              "AND", "XNOR", "A", "A OR NOT B", "B", "B OR NOT A", "OR", "1"]
@@ -116,7 +105,7 @@ def pwl(points):
     return "PWL(" + " ".join(f"{t:.6g} {v:g}" for t, v in points) + ")"
 
 
-def stimulus(nl, sram=False):
+def stimulus(nl):
     """
     Inputs in Gray code, A = 0 1 1 0 and B = 0 0 1 1 in steps of T_STEP. The
     table bits step through all 16 functions; function f is written T_WRITE
@@ -126,9 +115,6 @@ def stimulus(nl, sram=False):
                        f"{2 * T_STEP - T_EDGE:g} {4 * T_STEP:g})")
     nl.set_source("b", f"PULSE(0 {VDD:g} {2 * T_STEP:g} {T_EDGE:g} {T_EDGE:g} "
                        f"{2 * T_STEP - T_EDGE:g} {4 * T_STEP:g})")
-    if sram:
-        stimulus_sram(nl, range(16), T_FUNC, T_END)
-        return
     for bit in range(4):
         pts, level = [(0, 0)], 0
         for f in range(1, 16):
@@ -141,38 +127,10 @@ def stimulus(nl, sram=False):
         nl.set_source(f"t{bit}", pwl(pts))
 
 
-def stimulus_sram(nl, tables, t_func, t_end):
-    """
-    Write sequence for the SRAM cells. `tables` lists the functions; function
-    number n is written at the start of its window n * t_func, cell by cell:
-    bit lines to the value, word line high for T_PULSE, word line low.
-    """
-    e = T_EDGE
-    bl, bln = [(0, 0)], [(0, VDD)]
-    wl = [[(0, 0)] for _ in range(4)]
-    level = 0
-    for n, f in enumerate(tables):
-        for k in range(4):
-            t0 = n * t_func + T_FIRST + k * T_CYCLE
-            new = f >> k & 1
-            if new != level:
-                bl += [(t0, VDD * level), (t0 + e, VDD * new)]
-                bln += [(t0, VDD * (1 - level)), (t0 + e, VDD * (1 - new))]
-                level = new
-            tw = t0 + T_SETUP
-            wl[k] += [(tw, 0), (tw + e, VDD), (tw + T_PULSE, VDD), (tw + T_PULSE + e, 0)]
-    bl.append((t_end, VDD * level))
-    bln.append((t_end, VDD * (1 - level)))
-    nl.set_source("bl", pwl(bl))
-    nl.set_source("bln", pwl(bln))
-    for k in range(4):
-        nl.set_source(f"wl{k}", pwl(wl[k] + [(t_end, 0)]))
-
-
 T_GLITCH = 800e-9
 
 
-def stimulus_glitch(nl, sram=False):
+def stimulus_glitch(nl):
     """
     Both inputs change at the same instant, and the output should not move.
 
@@ -187,9 +145,6 @@ def stimulus_glitch(nl, sram=False):
     nl.set_source("b", pwl([(0, 0), (100e-9, 0), (100e-9 + e, VDD), (300e-9, VDD),
                             (300e-9 + e, 0), (500e-9, 0), (500e-9 + e, VDD),
                             (700e-9, VDD), (700e-9 + e, 0), (T_GLITCH, 0)]))
-    if sram:
-        stimulus_sram(nl, (0b0110, 0b1001), 400e-9, T_GLITCH)
-        return
     for bit, (xor, xnor) in enumerate(((0, 1), (1, 0), (1, 0), (0, 1))):
         nl.set_source(f"t{bit}", pwl([(0, VDD * xor), (400e-9, VDD * xor),
                                       (400e-9 + e, VDD * xnor), (T_GLITCH, VDD * xnor)]))
@@ -221,12 +176,10 @@ def truth_tables(t, v):
     return tables, errors
 
 
-def delays(t, v, inp, skip_boundaries=False):
+def delays(t, v, inp):
     """
     Propagation delays from edges of `inp` to the edge of Y that follows
     (50 % to 50 %). `inp` is "a", "b" or "table" (any of the four table bits).
-    With skip_boundaries, input edges at the start of a function window are
-    left out, because the memory is being written at that time.
     """
     if inp == "table":
         ti = np.arange(1, 16) * T_FUNC + T_WRITE + T_EDGE / 2
@@ -235,8 +188,6 @@ def delays(t, v, inp, skip_boundaries=False):
     ty, dy = crossings(t, v["y"], VDD / 2)
     rise, fall = [], []
     for e in ti:
-        if skip_boundaries and (e + 5e-9) % T_FUNC < 10e-9:
-            continue
         m = (ty > e) & (ty < e + 0.9 * T_WRITE)
         if m.any():
             j = np.argmax(m)
@@ -244,27 +195,7 @@ def delays(t, v, inp, skip_boundaries=False):
     return np.array(rise), np.array(fall)
 
 
-def analyse_memory(t, v):
-    """
-    SRAM cells: are the stored bits what was written, and how far are the
-    storage nodes pushed away from the rails while the LUT is being used?
-    Looked at outside the write phase, from T_WRITE to the end of a function.
-    """
-    wrong, low, high = 0, 0.0, VDD
-    for f in range(16):
-        m = (t > f * T_FUNC + T_WRITE) & (t < (f + 1) * T_FUNC)
-        for k in range(4):
-            x = v[f"t{k}"][m]
-            if f >> k & 1:
-                high = min(high, np.min(x))
-                wrong += int(np.any(x < VDD / 2))
-            else:
-                low = max(low, np.max(x))
-                wrong += int(np.any(x > VDD / 2))
-    return dict(mem_wrong=wrong, mem_low=low, mem_high=high)
-
-
-def analyse(t, v, i_supply, sram=False):
+def analyse(t, v, i_supply):
     tables, errors = truth_tables(t, v)
     high, low, quiet = [], [], []
     for f in range(16):
@@ -277,7 +208,7 @@ def analyse(t, v, i_supply, sram=False):
                yi_low=np.max(low), y_high=np.interp(6 * T_FUNC + 2 * T_STEP - 5e-9, t, v["y"]),
                i_quiet=np.max(quiet), i_quiet_min=np.min(quiet))
     for inp in ("a", "b", "table"):
-        res[f"{inp}_rise"], res[f"{inp}_fall"] = delays(t, v, inp, sram)
+        res[f"{inp}_rise"], res[f"{inp}_fall"] = delays(t, v, inp)
     return res
 
 
@@ -297,15 +228,14 @@ def analyse_glitch(t, v):
 # ---------------------------------------------------------------------------
 # Output
 # ---------------------------------------------------------------------------
-def write_vcd(path, t, v, variant, t_end=T_END):
-    sram = "wl0" in v
-    vcd = VCD("1ps", scope=f"lut2_{variant}",
+def write_vcd(path, t, v, t_end=T_END):
+    vcd = VCD("1ps", scope="lut2",
               comment="logic values (threshold VDD/2) and node voltages from ngspice")
-    names = ("a", "b", "y") + (("bl", "wl0", "wl1", "wl2", "wl3") if sram else ())
+    names = ("a", "b", "y")
     wires = {n: vcd.wire(n) for n in names}
     table = vcd.wire("table", 4)
     index = vcd.wire("index", 2)
-    analog = ("a", "b", "n0", "n1", "yi", "yb", "y") + (("t0", "t1", "t2", "t3") if sram else ())
+    analog = ("a", "b", "n0", "n1", "yi", "yb", "y")
     reals = {n: vcd.real(f"v_{n}") for n in analog}
     bits = {n: v[n] > VDD / 2 for n in names + ("t0", "t1", "t2", "t3")}
     last = {n: None for n in reals}
@@ -322,60 +252,44 @@ def write_vcd(path, t, v, variant, t_end=T_END):
     vcd.write(path, end_time=t_end)
 
 
-def write_gtkw(path, vcd_name, variant, zoom=-23.5, sram=False):
+def write_gtkw(path, vcd_name, zoom=-23.5):
     """GTKWave save file: logic signals on top, node voltages as analog traces below."""
-    scope = f"lut2_{variant}"
+    scope = "lut2"
     out = ["[*] GTKWave save file written by simulate.py",
            f'[dumpfile] "{vcd_name}"',
            "[timestart] 0", "[size] 1700 950", "[pos] -1 -1",
            f"*{zoom:g} 0 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1",
            "[sst_width] 220", "[signals_width] 170", "[sst_expanded] 1", "[sst_vpaned_height] 280",
            "@200", "-Configuration",
-           "@22", f"{scope}.table[3:0]"]
-    if sram:
-        out += ["@28", f"{scope}.bl"] + [f"{scope}.wl{k}" for k in range(4)]
-    out += [
+           "@22", f"{scope}.table[3:0]",
            "@200", "-Inputs",
            "@28", f"{scope}.a", f"{scope}.b",
            "@24", f"{scope}.index[1:0]",
            "@200", "-Output",
            "@28", f"{scope}.y",
            "@200", "-Node voltages"]
-    cells = ("v_t0", "v_t1", "v_t2", "v_t3") if sram else ()
-    for n in cells + ("v_a", "v_b", "v_n0", "v_n1", "v_yi", "v_yb", "v_y"):
+    for n in ("v_a", "v_b", "v_n0", "v_n1", "v_yi", "v_yb", "v_y"):
         # 0x90022: analog interpolated, full scale, right justified; then room for the trace
         out += ["@90022", f"{scope}.{n}", "@20000", "-", "-"]
     out += ["[pattern_trace] 1", "[pattern_trace] 0"]
     path.write_text("\n".join(out) + "\n")
 
 
-def plot(path, t, v, variant):
+def plot(path, t, v):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
     f0 = 6                                      # XOR
     m = (t >= f0 * T_FUNC - 20e-9) & (t <= (f0 + 1) * T_FUNC + 20e-9)
     tn = (t[m] - f0 * T_FUNC) * 1e9
-    sram = "wl0" in v
-    fig, ax = plt.subplots(4 if sram else 3, 1, figsize=(8, 8.4 if sram else 6.4), sharex=True)
+    fig, ax = plt.subplots(3, 1, figsize=(8, 6.4), sharex=True)
     titles = ("Inputs", "Inside the multiplexer tree", "Output")
-    if sram:
-        c4 = ("#2a78d6", "#eda100", "#1baf7a", "#8a5cd6")
-        for k in range(4):
-            ax[0].plot(tn, v[f"t{k}"][m], color=c4[k], label=f"T{k}")
-            ax[0].plot(tn, v[f"wl{k}"][m], color=c4[k], lw=0.8, ls=":")
-        ax[0].plot(tn, v["bl"][m], color="#52514e", lw=0.8, ls="--", label="BL")
-        titles = ("Memory: cell outputs T0..T3, word lines (dotted), bit line (dashed)",) + titles
-        ax = list(ax)
-        first, ax = ax[0], ax[1:]
     ax[0].plot(tn, v["a"][m], color="#2a78d6", label="A")
     ax[0].plot(tn, v["b"][m], color="#eda100", label="B")
     ax[1].plot(tn, v["n0"][m], color="#1baf7a", lw=1.2, label="N0")
     ax[1].plot(tn, v["n1"][m], color="#8a5cd6", lw=1.2, label="N1")
     ax[1].plot(tn, v["yi"][m], color="#eb6834", label="YI (before the buffer)")
     ax[2].plot(tn, v["y"][m], color="#eb6834", label="Y")
-    if sram:
-        ax = [first] + ax
     for a, title in zip(ax, titles):
         a.set_title(title, loc="left", fontsize=10, fontweight="bold")
         a.set_ylabel("Voltage [V]"); a.set_ylim(-0.6, VDD + 0.9)
@@ -384,9 +298,8 @@ def plot(path, t, v, variant):
             a.spines[s].set_visible(False)
         a.legend(frameon=False, loc="upper right", ncol=3, fontsize=8)
     ax[-1].set_xlabel("Time [ns]")
-    kind = {"tgate": "transmission gates", "pass": "NMOS pass transistors",
-            "sram": "transmission gates and SRAM cells"}[variant]
-    fig.suptitle(f"LUT configured as XOR (table 0110), {kind}", fontsize=11, fontweight="bold", x=0.02, ha="left")
+    fig.suptitle("LUT configured as XOR (table 0110)", fontsize=11, fontweight="bold",
+                 x=0.02, ha="left")
     fig.tight_layout()
     fig.savefig(path, dpi=150)
     plt.close(fig)
@@ -396,12 +309,11 @@ def ns(x):
     return "none observed" if len(x) == 0 else f"{np.mean(x) * 1e9:.1f} ns ({len(x)} edges)"
 
 
-def run(ng, nl, name, t_end, sram=False):
+def run(ng, nl, name, t_end):
     ng.command("destroy all")
     ng.load_netlist(nl.render(name))
     ng.run(f"tran 0.2n {t_end:g} 0 0.2n")
-    nodes = dict(NODES, **SRAM_NODES) if sram else NODES
-    return (ng.vector("time"), {n: ng.vector(f"v({node})") for n, node in nodes.items()},
+    return (ng.vector("time"), {n: ng.vector(f"v({node})") for n, node in NODES.items()},
             ng.vector("i(v1)"))
 
 
@@ -412,89 +324,61 @@ def main():
     args = ap.parse_args()
     args.results.mkdir(parents=True, exist_ok=True)
     ng = NgSpice()
-    results, glitch = {}, {}
 
-    for variant in VARIANTS:
-        name = f"lut2_{variant}"
-        sram = variant == "sram"
-        nl = Netlist(HERE / variant / "lut2.kicad_sch")
-        stimulus(nl, sram)
-        (args.results / f"{name}.cir").write_text(nl.render(f"LUT with two inputs, {variant}"))
-        t, v, i_supply = run(ng, nl, name, T_END, sram)
-        keep = np.r_[True, np.diff(t) > 0]
-        np.savetxt(args.results / f"{name}.csv", np.column_stack([t] + list(v.values()))[keep],
-                   delimiter=",", header="t," + ",".join(v), comments="", fmt="%.6g")
-        write_vcd(args.results / f"{name}.vcd", t, v, variant)
-        write_gtkw(args.results / f"{name}.gtkw", f"{name}.vcd", variant, sram=sram)
-        results[variant] = analyse(t, v, i_supply, sram)
-        if sram:
-            results[variant].update(analyse_memory(t, v))
-            results[variant]["table_rise"] = results[variant]["table_fall"] = np.array([])
-        plot(args.results / f"{name}.png", t, v, variant)
-        print(f"{name}: {len(t)} time points, truth table errors: {len(results[variant]['errors'])}")
+    nl = Netlist(HERE / "schematic" / "lut2.kicad_sch")
+    stimulus(nl)
+    (args.results / "lut2.cir").write_text(nl.render("LUT with two inputs"))
+    t, v, i_supply = run(ng, nl, "lut2", T_END)
+    keep = np.r_[True, np.diff(t) > 0]
+    np.savetxt(args.results / "lut2.csv", np.column_stack([t] + list(v.values()))[keep],
+               delimiter=",", header="t," + ",".join(v), comments="", fmt="%.6g")
+    write_vcd(args.results / "lut2.vcd", t, v)
+    write_gtkw(args.results / "lut2.gtkw", "lut2.vcd")
+    r = analyse(t, v, i_supply)
+    plot(args.results / "lut2.png", t, v)
+    print(f"lut2: {len(t)} time points, truth table errors: {len(r['errors'])}")
 
-        stimulus_glitch(nl, sram)
-        t, v, _ = run(ng, nl, name + "_glitch", T_GLITCH, sram)
-        write_vcd(args.results / f"{name}_glitch.vcd", t, v, variant, T_GLITCH)
-        write_gtkw(args.results / f"{name}_glitch.gtkw", f"{name}_glitch.vcd", variant,
-                   zoom=-19.5, sram=sram)
-        glitch[variant] = analyse_glitch(t, v)
+    stimulus_glitch(nl)
+    t, v, _ = run(ng, nl, "lut2_glitch", T_GLITCH)
+    write_vcd(args.results / "lut2_glitch.vcd", t, v, T_GLITCH)
+    write_gtkw(args.results / "lut2_glitch.gtkw", "lut2_glitch.vcd", zoom=-19.5)
+    glitch = analyse_glitch(t, v)
 
-    names = {"tgate": "Transmission gates", "pass": "Pass transistors", "sram": "SRAM cells"}
-    head = " | ".join(names[x] for x in VARIANTS)
-    sep = "|".join("---" for _ in range(len(VARIANTS) + 1))
     out = ["# LUT with two inputs: simulation results", "",
-           "One transient run per variant covers all 16 functions. The inputs step through",
-           "the four combinations in Gray code (index 0, 1, 3, 2) in steps of 200 ns. The",
-           "table is rewritten every 800 ns, while the inputs are 00: in the variants",
-           "`tgate` and `pass` the sources change 100 ns after the start of the window, in",
-           "the variant `sram` four write cycles fill the first 100 ns.", "",
-           "## Truth tables", "",
+           "One transient run covers all 16 functions. The inputs step through the four",
+           "combinations in Gray code (index 0, 1, 3, 2) in steps of 200 ns. The table is",
+           "rewritten every 800 ns, 100 ns after the inputs have returned to 00.", "",
+           "## Truth table", "",
            "The output Y is sampled 5 ns before the end of every input combination.",
            "The table is written as T3 T2 T1 T0, the index is 2 B + A.", "",
-           f"| Table | Function | {head} |", f"|---|{sep}|"]
+           "| Table | Function | Measured |", "|---|---|---|"]
     for f in range(16):
-        cells = []
-        for variant in VARIANTS:
-            got = results[variant]["tables"][f]
-            cells.append(f"{got:04b} " + ("ok" if got == f else "WRONG"))
-        out.append(f"| {f:04b} | {FUNCTIONS[f]} | " + " | ".join(cells) + " |")
-    out += ["", "## Measurements", "", f"| Quantity | {head} |", f"|{sep}|"]
-    rows = [("Wrong entries out of 64", lambda x: str(len(x["errors"]))),
-            ("Level of YI for a 1, mean", lambda x: f"{x['yi_high']:.3f} V"),
-            ("Level of YI for a 1, lowest", lambda x: f"{x['yi_high_min']:.3f} V"),
-            ("Level of YI for a 0, highest", lambda x: f"{x['yi_low'] * 1e3:.1f} mV"),
-            ("Level of Y for a 1", lambda x: f"{x['y_high']:.3f} V"),
-            ("Supply current at rest, smallest", lambda x: f"{x['i_quiet_min'] * 1e6:.3g} µA"),
-            ("Supply current at rest, largest", lambda x: f"{x['i_quiet'] * 1e6:.3g} µA"),
-            ("Delay A to Y, rising", lambda x: ns(x["a_rise"])),
-            ("Delay A to Y, falling", lambda x: ns(x["a_fall"])),
-            ("Delay B to Y, rising", lambda x: ns(x["b_rise"])),
-            ("Delay B to Y, falling", lambda x: ns(x["b_fall"])),
-            ("Delay table bit to Y, rising",
-             lambda x: "not measured" if "mem_wrong" in x else ns(x["table_rise"])),
-            ("Delay table bit to Y, falling",
-             lambda x: "not measured" if "mem_wrong" in x else ns(x["table_fall"]))]
-    for label, fn in rows:
-        out.append(f"| {label} | " + " | ".join(fn(results[x]) for x in VARIANTS) + " |")
-    if "sram" in results:
-        r = results["sram"]
-        out += ["", "## Memory", "",
-                "Storage nodes T0..T3 of the SRAM cells, looked at after the write phase, while",
-                "the LUT is in use. A cell counts as disturbed if its node crosses half the supply.", "",
-                "| Quantity | Value |", "|---|---|",
-                f"| Cells disturbed, out of 64 (16 functions, 4 cells) | {r['mem_wrong']} |",
-                f"| Lowest level of a node that stores a 1 | {r['mem_high']:.3f} V |",
-                f"| Highest level of a node that stores a 0 | {r['mem_low'] * 1e3:.1f} mV |"]
+        got = r["tables"][f]
+        out.append(f"| {f:04b} | {FUNCTIONS[f]} | {got:04b} " + ("ok" if got == f else "WRONG") + " |")
+    out += ["", "## Measurements", "", "| Quantity | Value |", "|---|---|"]
+    rows = [("Wrong entries out of 64", str(len(r["errors"]))),
+            ("Level of YI for a 1, mean", f"{r['yi_high']:.3f} V"),
+            ("Level of YI for a 1, lowest", f"{r['yi_high_min']:.3f} V"),
+            ("Level of YI for a 0, highest", f"{r['yi_low'] * 1e3:.1f} mV"),
+            ("Level of Y for a 1", f"{r['y_high']:.3f} V"),
+            ("Supply current at rest, smallest", f"{r['i_quiet_min'] * 1e6:.3g} µA"),
+            ("Supply current at rest, largest", f"{r['i_quiet'] * 1e6:.3g} µA"),
+            ("Delay A to Y, rising", ns(r["a_rise"])),
+            ("Delay A to Y, falling", ns(r["a_fall"])),
+            ("Delay B to Y, rising", ns(r["b_rise"])),
+            ("Delay B to Y, falling", ns(r["b_fall"])),
+            ("Delay table bit to Y, rising", ns(r["table_rise"])),
+            ("Delay table bit to Y, falling", ns(r["table_fall"]))]
+    for label, value in rows:
+        out.append(f"| {label} | {value} |")
     out += ["", "## Glitches", "",
             "Both inputs change within 1 ns; the old and the new table entry are both 1, so",
             "Y should stay at 1. Lowest voltage of YI and Y in the 90 ns after the change,",
             "and the width of the pulse if Y crosses half the supply.", "",
-            "| Change | Variant | lowest YI | lowest Y | Glitch at Y |", "|---|---|---|---|---|"]
-    for variant in VARIANTS:
-        for g in glitch[variant]:
-            w = f"{g['width'] * 1e9:.1f} ns" if g["width"] else "none"
-            out.append(f"| {g['label']} | {variant} | {g['yi_min']:.2f} V | {g['y_min']:.2f} V | {w} |")
+            "| Change | lowest YI | lowest Y | Glitch at Y |", "|---|---|---|---|"]
+    for g in glitch:
+        w = f"{g['width'] * 1e9:.1f} ns" if g["width"] else "none"
+        out.append(f"| {g['label']} | {g['yi_min']:.2f} V | {g['y_min']:.2f} V | {w} |")
     out.append("")
     (args.results / "summary.md").write_text("\n".join(out))
     print("\n".join(out))
