@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  # SKiDL -> KiCad schematic -> ngspice, with the consistency check and the
+  # truth-table check as the pass criteria.
+  simulate:
+    runs-on: ubuntu-latest
+    container:
+      image: kicad/kicad:9.0
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ngspice and uv
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends libngspice0 curl ca-certificates
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Generate schematic and verify it against SKiDL
+        run: uv run generate.py 2>&1 | tee build/generate.log | grep -v "^WARNING"
+
+      - name: Simulate
+        run: uv run simulate.py 2>&1 | grep -v "^WARNING"
+
+      - name: Check the truth tables
+        run: grep -q "| Wrong entries out of 64 | 0 |" results/summary.md
+
+      - name: Check that the committed schematic is up to date
+        run: git diff --exit-code --stat -- schematic docs
+
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: results
+          path: results/
+
+  # Figures from the fresh results, then the PDF.
+  paper:
+    needs: simulate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: results
+          path: results/
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate figures
+        run: |
+          pip install numpy matplotlib skidl
+          python scripts/make_figures.py
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: transistor_lut_en.tex
+          working_directory: paper
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: transistor_lut_en
+          path: paper/transistor_lut_en.pdf
+
+      - name: Release PDF on tag
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: paper/transistor_lut_en.pdf

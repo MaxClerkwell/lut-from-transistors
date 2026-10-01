@@ -198,8 +198,12 @@ simulated.
 this circuit: from Boolean functions and Shannon's expansion over the
 transistor as a switch, the transmission gate and the CMOS inverter to
 the complete LUT and its simulation, with every number in the text
-computed from the model or taken from `results/summary.md`. A GitHub
-Actions workflow builds the PDF on every push and attaches it to
+computed from the model or taken from `results/summary.md`.
+
+A GitHub Actions workflow runs on every push: it generates the schematic
+in a KiCad container, checks it against the SKiDL netlist, simulates with
+ngspice, checks that all 64 truth-table entries are correct, regenerates
+the figures from the fresh results, builds the PDF and attaches it to
 releases on version tags.
 
 ```sh
