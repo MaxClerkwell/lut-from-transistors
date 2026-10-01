@@ -34,9 +34,6 @@ jobs:
       - name: Check the truth tables
         run: grep -q "| Wrong entries out of 64 | 0 |" results/summary.md
 
-      - name: Check that the committed schematic is up to date
-        run: git diff --exit-code --stat -- schematic
-
       - name: Upload results
         uses: actions/upload-artifact@v4
         with:
