@@ -9,3 +9,11 @@ fp-info-cache
 *.log
 results/*.csv
 *_sklib.py
+# LaTeX
+*.aux
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.synctex.gz
+paper/transistor_lut_en.pdf

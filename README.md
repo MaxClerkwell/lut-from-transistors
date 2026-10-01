@@ -192,6 +192,26 @@ The netlist that is simulated is exported from the KiCad schematic with
 `kicad-cli`, which flattens the hierarchy, so the schematic is what gets
 simulated.
 
+## The paper
+
+`paper/transistor_lut_en.tex` is a step-by-step introduction built on
+this circuit: from Boolean functions and Shannon's expansion over the
+transistor as a switch, the transmission gate and the CMOS inverter to
+the complete LUT and its simulation, with every number in the text
+computed from the model or taken from `results/summary.md`. A GitHub
+Actions workflow builds the PDF on every push and attaches it to
+releases on version tags.
+
+```sh
+uv run scripts/make_figures.py       # figures from the model and results/
+scripts/make_schematics.sh           # schematic sheets from docs/sheets/
+cd paper && latexmk -pdf transistor_lut_en.tex
+```
+
+The figures are committed, so a LaTeX installation is enough to build
+the PDF; the two scripts are needed only after a change of the circuit
+or the simulation.
+
 ## Files
 
 | File | Content |
@@ -205,6 +225,8 @@ simulated.
 | `schematic/` | generated KiCad project: root sheet `lut2.kicad_sch`, four sub-sheets, netlist `lut2.net` |
 | `docs/` | renderings: one SVG per sheet in `sheets/`, all sheets in `lut2.pdf` |
 | `results/` | VCD and GTKWave files, plot, netlist, `summary.md` |
+| `paper/` | the paper, `transistor_lut_en.tex`, and its figures |
+| `scripts/` | `make_figures.py` and `make_schematics.sh`, the figure generators of the paper |
 
 ## Running the simulation
 
