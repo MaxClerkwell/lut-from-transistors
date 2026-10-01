@@ -307,3 +307,8 @@ enters the sheet.
   their body diode conducts in a transmission gate. For a build on a
   breadboard use an array with a separate bulk terminal, such as the
   CD4007.
+
+## Acknowledgement
+
+Parts of the documentation, the README and the paper, were revised with
+Claude with the aim of better readability.
