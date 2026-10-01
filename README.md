@@ -10,6 +10,8 @@ in [GTKWave](https://gtkwave.sourceforge.net/).
 SKiDL (lut.py)  ->  KiCad schematic  ->  ngspice  ->  VCD  ->  GTKWave
 ```
 
+To run it yourself, see [Running the simulation](#running-the-simulation).
+
 ## What a LUT is
 
 A LUT with k inputs does not compute anything. It stores the truth table of
@@ -204,23 +206,62 @@ simulated.
 | `docs/` | renderings: one SVG per sheet in `sheets/`, all sheets in `lut2.pdf` |
 | `results/` | VCD and GTKWave files, plot, netlist, `summary.md` |
 
-## Usage
-
-```sh
-uv run generate.py      # SKiDL -> netlist, schematic, consistency check, docs/
-uv run simulate.py      # schematic -> ngspice -> results/
-```
-
-`generate.py` ends with `schematic <-> SKiDL netlist: IDENTICAL`. It
-overwrites the schematic, including manual changes. KiCad's electrical
-rules check reports no violations.
-
-Open the schematic with `eeschema schematic/lut2.kicad_sch`. A double click
-on a sheet symbol enters the sheet.
+## Running the simulation
 
 Requirements: [uv](https://docs.astral.sh/uv/), Python 3.10 or newer,
 KiCad 9 or 10 with `kicad-cli` and the symbol libraries in
 `/usr/share/kicad/symbols`, `libngspice.so.0`, and GTKWave for viewing.
+`uv` installs the Python packages (SKiDL, NumPy, Matplotlib) on the first
+run.
+
+1. **Generate the schematic.** SKiDL builds the circuit from `lut.py`,
+   `hier.py` writes the five KiCad sheets into `schematic/`, and
+   `kicad-cli` renders them into `docs/`.
+
+   ```sh
+   uv run generate.py
+   ```
+
+   The last line must read `schematic <-> SKiDL netlist: IDENTICAL`. It
+   means the schematic that KiCad reads describes the same circuit as the
+   Python code. The step overwrites the schematic, including manual
+   changes made in KiCad. KiCad's electrical rules check reports no
+   violations.
+
+2. **Simulate.** `kicad-cli` exports a flat SPICE netlist from the
+   schematic, ngspice runs the transient analysis, and the script
+   evaluates it.
+
+   ```sh
+   uv run simulate.py
+   ```
+
+   It takes a few seconds. The console ends with the truth table of all
+   16 functions and the measured delays; the same text goes to
+   `results/summary.md`. Along with it the script writes `results/lut2.vcd`
+   and `results/lut2.gtkw`, the glitch run as `results/lut2_glitch.*`, the
+   simulated netlist `results/lut2.cir` and the plot `results/lut2.png`.
+
+3. **Open the result in GTKWave.** Give GTKWave the VCD file and the save
+   file; the save file sets up the signal list and the analog traces.
+
+   ```sh
+   gtkwave results/lut2.vcd results/lut2.gtkw
+   ```
+
+   The view opens on the whole run of 12.8 µs. Zoom with `Ctrl` and the
+   mouse wheel, or type a range into the `From` and `To` fields, for
+   example `4800ns` and `5600ns` for the XOR window shown above. The
+   signals are listed in [Viewing the waveforms in GTKWave](#viewing-the-waveforms-in-gtkwave).
+   For the glitch experiment:
+
+   ```sh
+   gtkwave results/lut2_glitch.vcd results/lut2_glitch.gtkw
+   ```
+
+To look at the schematic, open the root sheet with
+`eeschema schematic/lut2.kicad_sch`. A double click on a sheet symbol
+enters the sheet.
 
 ## Limits
 
